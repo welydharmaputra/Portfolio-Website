@@ -24,27 +24,6 @@ function Portfolio() {
       image: "/project3.jpg",
       tags: ["Product Design"],
     },
-    {
-      id: 4,
-      title: "Project Title 4",
-      description: "Project description",
-      image: "/project4.jpg",
-      tags: ["Tag"],
-    },
-    {
-      id: 5,
-      title: "Project Title 5",
-      description: "Project description",
-      image: "/project5.jpg",
-      tags: ["Tag"],
-    },
-    {
-      id: 6,
-      title: "Project Title 6",
-      description: "Project description",
-      image: "/project6.jpg",
-      tags: ["Tag"],
-    },
   ];
 
   return (
@@ -60,7 +39,9 @@ function Portfolio() {
 
       {/* Projects Grid Section */}
       <section className="projects-section">
-        <h2>Some of my latest work</h2>
+        <button className="section-button">
+          Some of my latest work <span className="arrow">→</span>
+        </button>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
