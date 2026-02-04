@@ -1,21 +1,26 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Portfolio from "./Pages/Portfolio";
+import Project from "./Pages/Project";
+import Projectlist from "./Pages/Projectlist";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <Portfolio />
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/projects" element={<Projectlist />} />
+        <Route path="/project/:id" element={<Project />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

@@ -1,31 +1,25 @@
 import "./Portfolio.css";
-import { Link, useNavigate } from "react-router-dom";
-import { projectsData, aboutData } from "../data/dummyData";
+import { Link } from "react-router-dom";
+import { projectsData } from "../data/dummyData";
 
-function Portfolio() {
-  const navigate = useNavigate();
-  const projects = projectsData.slice(0, 3);
-  const about = aboutData;
-
-  const handleViewAllProjects = () => {
-    navigate("/projects");
-  };
+function Projectlist() {
+  const projects = projectsData;
 
   return (
     <div className="portfolio-container">
-      {/* Image Section */}
+      {/* Header Section */}
       <section className="portfolio-hero">
-        <div className="profile-image-wrapper">
-          <img src="/profile.jpg" alt="Profile" className="profile-image" />
-        </div>
-        <h1>{about.name}</h1>
-        <p>{about.shortBio}</p>
+        <h1>All Projects</h1>
+        <p>Explore my complete portfolio of design and development work</p>
+        <Link to="/" className="back-button">
+          ← Back to Home
+        </Link>
       </section>
 
       {/* Projects Grid Section */}
-      <section className="projects-section" id="projects">
-        <button className="section-button" onClick={handleViewAllProjects}>
-          Some of my latest work <span className="arrow">→</span>
+      <section className="projects-section">
+        <button className="section-button">
+          Complete project collection <span className="arrow">→</span>
         </button>
         <div className="projects-grid">
           {projects.map((project) => (
@@ -58,4 +52,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default Projectlist;
