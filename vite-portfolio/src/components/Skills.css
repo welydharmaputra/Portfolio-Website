@@ -1,0 +1,95 @@
+.skills-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.skills-bubbles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.skill-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(135deg, #61dafb, #00bcd4);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+  transition: all 0.3s ease;
+  cursor: default;
+  border: 2px solid transparent;
+}
+
+.skill-bubble:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(97, 218, 251, 0.5);
+  border-color: rgba(97, 218, 251, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .skills-bubbles-container {
+    gap: 1rem;
+  }
+
+  .skill-bubble {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+  }
+
+  .skills-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-bubbles-container {
+    gap: 0.75rem;
+  }
+
+  .skill-bubble {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}

@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingMenu from "./components/Bubblejob";
 import Portfolio from "./Pages/Portfolio";
 import Project from "./Pages/Project";
 import Projectlist from "./Pages/Projectlist";
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <FloatingMenu />
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/projects" element={<Projectlist />} />

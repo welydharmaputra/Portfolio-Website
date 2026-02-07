@@ -1,4 +1,4 @@
-import "./Portfolio.css";
+import "./Projectlist.css";
 import { Link } from "react-router-dom";
 import { projectsData } from "../data/dummyData";
 
@@ -6,9 +6,9 @@ function Projectlist() {
   const projects = projectsData;
 
   return (
-    <div className="portfolio-container">
+    <div className="projectlist-container">
       {/* Header Section */}
-      <section className="portfolio-hero">
+      <section className="projectlist-hero">
         <h1>All Projects</h1>
         <p>Explore my complete portfolio of design and development work</p>
         <Link to="/" className="back-button">
@@ -17,11 +17,8 @@ function Projectlist() {
       </section>
 
       {/* Projects Grid Section */}
-      <section className="projects-section">
-        <button className="section-button">
-          Complete project collection <span className="arrow">→</span>
-        </button>
-        <div className="projects-grid">
+      <section className="projectlist-section">
+        <div className="projectlist-grid">
           {projects.map((project) => (
             <Link
               key={project.id}

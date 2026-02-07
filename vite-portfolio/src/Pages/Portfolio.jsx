@@ -1,10 +1,11 @@
 import "./Portfolio.css";
 import { Link, useNavigate } from "react-router-dom";
 import { projectsData, aboutData } from "../data/dummyData";
+import Skills from "../components/Skills";
 
 function Portfolio() {
   const navigate = useNavigate();
-  const projects = projectsData.slice(0, 3);
+  const projects = projectsData.slice(0, 10);
   const about = aboutData;
 
   const handleViewAllProjects = () => {
@@ -21,6 +22,9 @@ function Portfolio() {
         <h1>{about.name}</h1>
         <p>{about.shortBio}</p>
       </section>
+
+      {/* Skills Section */}
+      <Skills />
 
       {/* Projects Grid Section */}
       <section className="projects-section" id="projects">
@@ -41,17 +45,23 @@ function Portfolio() {
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p className="project-description">{project.description}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag, index) => (
-                      <span key={index} className="tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <div className="project-tags"></div>
                 </div>
               </div>
             </Link>
           ))}
+          <button
+            className="project-card-link show-more-btn"
+            onClick={handleViewAllProjects}
+          >
+            <div className="project-card show-more-card">
+              <div className="show-more-content">
+                <h3>View All Projects</h3>
+                <p>See more of my work</p>
+                <div className="show-more-arrow">→</div>
+              </div>
+            </div>
+          </button>
         </div>
       </section>
     </div>

@@ -131,10 +131,31 @@
 
 /* Projects Grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
   gap: 2rem;
   padding: 2rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: #61dafb;
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: #00bcd4;
 }
 
 /* Project Card Link */
@@ -142,6 +163,8 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  flex: 0 0 280px;
+  min-width: 280px;
 }
 
 /* Project Card */
@@ -155,6 +178,9 @@
   cursor: pointer;
   border: 1px solid #e0e0e0;
   animation: slideUp 0.6s ease-out both;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Stagger animation for each project card */
@@ -189,7 +215,7 @@
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 160px;
   overflow: hidden;
   background-color: #f5f5f5;
 }
@@ -207,34 +233,87 @@
 
 .project-content {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-content h3:hover {
+  color: #00c8ff;
 }
 
 .project-description {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: left;
 }
 
-.project-tags {
+.show-more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.show-more-card {
+  background: linear-gradient(135deg, #61dafb, #00bcd4);
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
 }
 
-.tag {
-  display: inline-block;
-  background-color: #f0f0f0;
-  color: #0066cc;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  border: 1px solid #0066cc;
+.show-more-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  gap: 1rem;
+}
+
+.show-more-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.show-more-content p {
+  font-size: 0.95rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.show-more-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
 }
 
 /* Responsive Design */

@@ -9,14 +9,16 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-column">
           <h3>Contact</h3>
-          <p>
-            Email:{" "}
-            <a href={`mailto:${contactData.email}`}>{contactData.email}</a>
-          </p>
-          <p>
-            Phone: <a href={`tel:${contactData.phone}`}>{contactData.phone}</a>
-          </p>
-          <p>Location: {contactData.address}</p>
+            <div className="footer-contact">
+              <p>
+                Email:{" "}
+                <a href={`mailto:${contactData.email}`}>{contactData.email}</a>
+              </p>
+              <p>
+                Phone: <a href={`tel:${contactData.phone}`}>{contactData.phone}</a>
+              </p>
+              <p>Location: {contactData.address}</p>
+          </div>
         </div>
 
         <div className="footer-column">

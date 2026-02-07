@@ -96,6 +96,7 @@ export const skillsData = {
     "Slack",
     "Visual Studio Code",
     "Chrome DevTools",
+    "Blender3D"
   ],
 };
 
@@ -133,6 +134,15 @@ export const testimonialsData = [
   },
   {
     id: 3,
+    name: "Michael Chen",
+    role: "Design Lead",
+    company: "Digital Studio",
+    content:
+      "One of the best designers I've worked with. Highly recommend for any design project.",
+    image: "/testimonial3.jpg",
+  },
+  {
+    id: 4,
     name: "Michael Chen",
     role: "Design Lead",
     company: "Digital Studio",
