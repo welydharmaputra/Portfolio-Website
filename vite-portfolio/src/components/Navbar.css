@@ -15,11 +15,34 @@
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
+  animation: navEnter 0.6s ease-out both;
 }
 
 .navbar.hidden {
   transform: translateY(-100%);
   opacity: 0;
+}
+
+@keyframes navEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navbar-container {
@@ -57,6 +80,33 @@
   transition: color 0.3s ease;
   padding: 0.5rem 0;
   border-bottom: 2px solid transparent;
+}
+
+@media (min-width: 769px) {
+  .navbar-menu a {
+    opacity: 0;
+    animation: navItemIn 0.5s ease-out forwards;
+  }
+
+  .navbar-menu a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .navbar-menu a:nth-child(2) {
+    animation-delay: 0.18s;
+  }
+
+  .navbar-menu a:nth-child(3) {
+    animation-delay: 0.26s;
+  }
+
+  .navbar-menu a:nth-child(4) {
+    animation-delay: 0.34s;
+  }
+
+  .navbar-menu a:nth-child(5) {
+    animation-delay: 0.42s;
+  }
 }
 
 .navbar-menu a:hover {
@@ -128,5 +178,13 @@
 
   .navbar-logo a {
     font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-menu a {
+    animation: none;
+    opacity: 1;
   }
 }

@@ -16,11 +16,11 @@ function Portfolio() {
     <div className="portfolio-container">
       {/* Image Section */}
       <section className="portfolio-hero">
-        <div className="profile-image-wrapper">
-          <img src="/profile.jpg" alt="Profile" className="profile-image" />
+        <div className="hero-image" aria-hidden="true"></div>
+        <div className="hero-text">
+          <h1>{about.name}</h1>
+          <p>{about.shortBio}</p>
         </div>
-        <h1>{about.name}</h1>
-        <p>{about.shortBio}</p>
       </section>
 
       {/* Skills Section */}
