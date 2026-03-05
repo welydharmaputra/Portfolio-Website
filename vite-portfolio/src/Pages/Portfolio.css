@@ -334,6 +334,26 @@
   animation: bounce 2s infinite;
 }
 
+/* Biography Section */
+.biography-section {
+  max-width: 900px;
+  margin: 4rem auto 6rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.biography-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.biography-text {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+}
+
 @keyframes bounce {
   0%,
   100% {

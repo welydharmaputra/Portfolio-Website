@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Bubblejob.css";
 
@@ -44,6 +44,7 @@ export default function FloatingMenu() {
       footer.scrollIntoView({ behavior: "smooth" });
     }
   };
+
 
   return (
     <div className="floating-menu">
@@ -91,6 +92,10 @@ export default function FloatingMenu() {
         >
           <span className="fab-label">Contact</span>
         </a>
+
+        <Link to="/projects" className="fab-item" onClick={closeMenu} title="All Projects">
+          <span className="fab-label">All Projects</span>
+        </Link>
       </div>
     </div>
   );

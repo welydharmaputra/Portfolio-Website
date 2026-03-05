@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingMenu from "./components/Bubblejob";
+import ContactSection from "./components/ContactSection";
 import Portfolio from "./Pages/Portfolio";
 import Project from "./Pages/Project";
 import Projectlist from "./Pages/Projectlist";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/projects" element={<Projectlist />} />
         <Route path="/project/:id" element={<Project />} />
       </Routes>
+      <ContactSection />
       <Footer />
     </Router>
   );

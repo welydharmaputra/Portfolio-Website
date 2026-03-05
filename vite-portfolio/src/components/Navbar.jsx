@@ -12,22 +12,6 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const handleProjectsClick = (e) => {
-    e.preventDefault();
-    setIsOpen(false);
-
-    if (location.pathname === "/") {
-      // Already on home, scroll to projects section
-      const projectsSection = document.getElementById("projects");
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // Navigate to home, then scroll to projects
-      window.location.href = "/#projects";
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -61,7 +45,7 @@ export default function Navbar() {
           <a href="#about" onClick={() => setIsOpen(false)}>
             About
           </a>
-          <a href="#projects" onClick={handleProjectsClick}>
+          <a href="#projects" onClick={() => setIsOpen(false)}>
             Projects
           </a>
           <a href="#skills" onClick={() => setIsOpen(false)}>
@@ -70,6 +54,9 @@ export default function Navbar() {
           <a href="#contact" onClick={() => setIsOpen(false)}>
             Contact
           </a>
+          <Link to="/projects" onClick={() => setIsOpen(false)}>
+            All Projects
+          </Link>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>

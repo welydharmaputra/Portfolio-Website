@@ -45,6 +45,11 @@ function Projectlist() {
       <section className="projectlist-hero">
         <h1>All Projects</h1>
         <p>Explore my complete portfolio of design and development work</p>
+        
+      </section>
+
+      {/* Projects Grid Section */}
+      <section className="projectlist-section">
         <div className="projectlist-filters">
           <div className="projectlist-search">
             <input
@@ -70,13 +75,6 @@ function Projectlist() {
             </select>
           </div>
         </div>
-        <Link to="/" className="back-button">
-          ← Back to Home
-        </Link>
-      </section>
-
-      {/* Projects Grid Section */}
-      <section className="projectlist-section">
         <div className="projectlist-grid">
           {filteredProjects.length === 0 ? (
             <div className="projectlist-empty">
