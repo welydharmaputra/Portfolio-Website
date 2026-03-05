@@ -1,5 +1,6 @@
 .skills-section {
-  max-width: 1200px;
+  max-width: none;
+  width: 100%;
   margin: 6rem auto;
   padding: 4rem 2rem;
   text-align: center;
@@ -44,12 +45,18 @@
   margin: 0.35rem 0 0;
 }
 
-.skills-bubbles-container {
+.skills-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.skills-marquee-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
   align-items: center;
+  gap: 2rem;
+  width: max-content;
+  animation: skillsMarquee 26s linear infinite;
 }
 
 .skill-bubble {
@@ -64,15 +71,42 @@
   font-weight: 500;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: default;
   border: 2px solid transparent;
+  flex: 0 0 auto;
+}
+
+.skill-bubble-text {
+  display: inline-block;
+  animation: bubbleTilt 2s ease-in-out infinite;
 }
 
 .skill-bubble:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 8px 20px rgba(97, 218, 251, 0.5);
   border-color: rgba(97, 218, 251, 0.5);
+}
+
+@keyframes skillsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bubbleTilt {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 @keyframes fadeIn {
@@ -102,8 +136,9 @@
     font-size: 1.6rem;
   }
 
-  .skills-bubbles-container {
-    gap: 1rem;
+  .skills-marquee-track {
+    gap: 1.5rem;
+    animation-duration: 22s;
   }
 
   .skill-bubble {
@@ -131,8 +166,9 @@
     font-size: 1.35rem;
   }
 
-  .skills-bubbles-container {
-    gap: 0.75rem;
+  .skills-marquee-track {
+    gap: 1rem;
+    animation-duration: 18s;
   }
 
   .skill-bubble {

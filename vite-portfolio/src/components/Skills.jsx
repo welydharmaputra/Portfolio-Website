@@ -4,34 +4,24 @@ import { skillsData } from "../data/dummyData";
 export default function Skills() {
   const services = [
     {
-      title: "Brand Identity & Systems",
-      description:
-        "I build brand identities designed to last. Logo, typography, and systems that guide your team so everything stays consistent and clear.",
-    },
-    {
-      title: "Campaigns & Launches",
-      description:
-        "I concept and run integrated campaigns that drive awareness and growth. Product launches or always-on work, I keep strategy and execution aligned from start to ship.",
-    },
-    {
-      title: "Web & Digital Design",
+      title: "Web Developer",
       description:
         "I design websites and landing pages that perform. Intuitive layouts, clear hierarchy, built to convert. I can prototype and build directly in modern no-code tools when speed matters.",
     },
     {
-      title: "Content & Creative Direction",
+      title: "UI/UX Design",
       description:
-        "I direct and collaborate on content across social, photography, and motion. The goal is always the same: cohesive, on-brand work that earns attention and holds it.",
+        "I build brand identities designed to last. Logo, typography, and systems that guide your team so everything stays consistent and clear.",
     },
     {
-      title: "Events & Activations",
+      title: "3D Design & Motion",
       description:
-        "I design physical and digital experiences that build visibility and deepen connection. Trade show booths to branded moments, I treat every format as a chance to reinforce the brand.",
+        "I concept and run integrated campaigns that drive awareness and growth. Product launches or always-on work, I keep strategy and execution aligned from start to ship.",
     },
     {
-      title: "Strategic Collaboration",
+      title: "Data Analytics",
       description:
-        "I partner with marketing, product, and creative leads to connect vision to execution. I bring cross-functional clarity and make sure the work stays tied to the goal.",
+        "I analyze data to uncover insights and drive informed decisions. From data visualization to statistical analysis, I help turn raw data into actionable strategies.",
     },
   ];
   const allSkills = [
@@ -39,6 +29,7 @@ export default function Skills() {
     ...skillsData.development,
     ...skillsData.tools,
   ];
+  const marqueeSkills = [...allSkills, ...allSkills];
 
   return (
     <section className="skills-section" id="skills">
@@ -51,12 +42,14 @@ export default function Skills() {
           </div>
         ))}
       </div>
-      <div className="skills-bubbles-container">
-        {allSkills.map((skill, index) => (
-          <div key={index} className="skill-bubble">
-            {skill}
-          </div>
-        ))}
+      <div className="skills-marquee" aria-label="Skills marquee">
+        <div className="skills-marquee-track">
+          {marqueeSkills.map((skill, index) => (
+            <div key={`${skill}-${index}`} className="skill-bubble">
+              <span className="skill-bubble-text">{skill}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

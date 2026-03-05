@@ -87,15 +87,14 @@ export const skillsData = {
     "Git",
     "Web Design",
     "Frontend Development",
+    "Angular",
   ],
   tools: [
     "Figma",
     "Adobe Creative Suite",
     "Sketch",
     "Jira",
-    "Slack",
     "Visual Studio Code",
-    "Chrome DevTools",
     "Blender3D"
   ],
 };
