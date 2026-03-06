@@ -17,7 +17,6 @@ function Project() {
 
   return (
     <div className="project-page">
-      <Link to="/" className="back-button">← Back to Portfolio</Link>
       <h1>{project.title}</h1>
       <img src={project.image} alt={project.title} className="project-main-image" />
       <p className="project-category">{project.category}</p>

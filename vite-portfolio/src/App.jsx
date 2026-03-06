@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import FloatingMenu from "./components/Bubblejob";
 import ContactSection from "./components/ContactSection";
 import Portfolio from "./Pages/Portfolio";
+import Biography from "./Pages/Biography";
 import Project from "./Pages/Project";
 import Projectlist from "./Pages/Projectlist";
 
@@ -19,6 +20,7 @@ function App() {
       <FloatingMenu />
       <Routes>
         <Route path="/" element={<Portfolio />} />
+        <Route path="/biography" element={<Biography />} />
         <Route path="/projects" element={<Projectlist />} />
         <Route path="/project/:id" element={<Project />} />
       </Routes>

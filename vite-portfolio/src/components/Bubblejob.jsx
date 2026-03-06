@@ -45,7 +45,6 @@ export default function FloatingMenu() {
     }
   };
 
-
   return (
     <div className="floating-menu">
       <button className="fab-main" onClick={toggleMenu} title="Menu">
@@ -57,14 +56,14 @@ export default function FloatingMenu() {
           <span className="fab-label">Home</span>
         </Link>
 
-        <a
-          href="#about"
+        <Link
+          to="/biography"
           className="fab-item"
-          onClick={() => handleSmoothScroll("about")}
+          onClick={closeMenu}
           title="About"
         >
           <span className="fab-label">About</span>
-        </a>
+        </Link>
 
         <a
           href="#projects"
@@ -93,7 +92,12 @@ export default function FloatingMenu() {
           <span className="fab-label">Contact</span>
         </a>
 
-        <Link to="/projects" className="fab-item" onClick={closeMenu} title="All Projects">
+        <Link
+          to="/projects"
+          className="fab-item"
+          onClick={closeMenu}
+          title="All Projects"
+        >
           <span className="fab-label">All Projects</span>
         </Link>
       </div>

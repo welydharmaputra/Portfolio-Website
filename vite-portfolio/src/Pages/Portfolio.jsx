@@ -64,12 +64,6 @@ function Portfolio() {
           </button>
         </div>
       </section>
-
-      {/* Biography Section */}
-      <section className="biography-section" id="about">
-        <h2 className="biography-title">My Biography</h2>
-        <p className="biography-text">{about.bio}</p>
-      </section>
     </div>
   );
 }

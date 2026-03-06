@@ -42,9 +42,9 @@ export default function Navbar() {
           <Link to="/" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <a href="#about" onClick={() => setIsOpen(false)}>
+          <Link to="/biography" onClick={() => setIsOpen(false)}>
             About
-          </a>
+          </Link>
           <a href="#projects" onClick={() => setIsOpen(false)}>
             Projects
           </a>
