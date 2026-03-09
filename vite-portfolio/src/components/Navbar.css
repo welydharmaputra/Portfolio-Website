@@ -23,6 +23,10 @@
   opacity: 0;
 }
 
+.navbar.navbar-secondary {
+  animation: navSecondaryEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @keyframes navEnter {
   from {
     opacity: 0;
@@ -42,6 +46,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes navSecondaryEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes navSecondaryItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -72,6 +98,10 @@
   margin-left: auto;
 }
 
+.navbar.navbar-secondary .navbar-menu {
+  gap: 3rem;
+}
+
 .navbar-menu a {
   color: #fff;
   text-decoration: none;
@@ -83,29 +113,54 @@
 }
 
 @media (min-width: 769px) {
-  .navbar-menu a {
+  .navbar:not(.navbar-secondary) .navbar-menu a {
     opacity: 0;
     animation: navItemIn 0.5s ease-out forwards;
   }
 
-  .navbar-menu a:nth-child(1) {
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(1) {
     animation-delay: 0.1s;
   }
 
-  .navbar-menu a:nth-child(2) {
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(2) {
     animation-delay: 0.18s;
   }
 
-  .navbar-menu a:nth-child(3) {
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(3) {
     animation-delay: 0.26s;
   }
 
-  .navbar-menu a:nth-child(4) {
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(4) {
     animation-delay: 0.34s;
   }
 
-  .navbar-menu a:nth-child(5) {
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(5) {
     animation-delay: 0.42s;
+  }
+
+  .navbar:not(.navbar-secondary) .navbar-menu a:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+
+  .navbar.navbar-secondary .navbar-menu a {
+    opacity: 0;
+    animation: navSecondaryItemIn 0.45s ease-out forwards;
+  }
+
+  .navbar.navbar-secondary .navbar-menu a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .navbar.navbar-secondary .navbar-menu a:nth-child(2) {
+    animation-delay: 0.18s;
+  }
+
+  .navbar.navbar-secondary .navbar-menu a:nth-child(3) {
+    animation-delay: 0.26s;
+  }
+
+  .navbar.navbar-secondary .navbar-menu a:nth-child(4) {
+    animation-delay: 0.34s;
   }
 }
 

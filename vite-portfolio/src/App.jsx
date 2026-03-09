@@ -1,19 +1,15 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingMenu from "./components/Bubblejob";
-import ContactSection from "./components/ContactSection";
 import Portfolio from "./Pages/Portfolio";
 import Biography from "./Pages/Biography";
 import Project from "./Pages/Project";
 import Projectlist from "./Pages/Projectlist";
+import Contact from "./Pages/Contact";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Router>
       <Navbar />
@@ -23,8 +19,8 @@ function App() {
         <Route path="/biography" element={<Biography />} />
         <Route path="/projects" element={<Projectlist />} />
         <Route path="/project/:id" element={<Project />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-      <ContactSection />
       <Footer />
     </Router>
   );

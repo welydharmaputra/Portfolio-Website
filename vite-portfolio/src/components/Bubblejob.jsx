@@ -14,35 +14,59 @@ export default function FloatingMenu() {
     setIsOpen(false);
   };
 
+  const slowScrollToSection = (sectionId, duration = 1400) => {
+    const section = document.getElementById(sectionId);
+    if (!section) {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      section.scrollIntoView();
+      return;
+    }
+
+    const startY = window.scrollY;
+    const targetY = section.getBoundingClientRect().top + window.scrollY;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const step = (currentTime) => {
+      if (!startTime) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY + distance * easedProgress);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
   const handleProjectsClick = (e) => {
     e.preventDefault();
     closeMenu();
 
     if (location.pathname === "/") {
-      const projectsSection = document.getElementById("projects");
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: "smooth" });
-      }
+      slowScrollToSection("projects");
     } else {
       window.location.href = "/#projects";
     }
   };
 
-  const handleSmoothScroll = (sectionId) => {
-    closeMenu();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleContactClick = (e) => {
+  const handleSmoothScroll = (e, sectionId) => {
     e.preventDefault();
     closeMenu();
-    const footer = document.querySelector(".footer-section");
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" });
-    }
+    slowScrollToSection(sectionId);
   };
 
   return (
@@ -77,20 +101,20 @@ export default function FloatingMenu() {
         <a
           href="#skills"
           className="fab-item"
-          onClick={() => handleSmoothScroll("skills")}
+          onClick={(e) => handleSmoothScroll(e, "skills")}
           title="Skills"
         >
           <span className="fab-label">Skills</span>
         </a>
 
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="fab-item"
-          onClick={handleContactClick}
+          onClick={closeMenu}
           title="Contact"
         >
           <span className="fab-label">Contact</span>
-        </a>
+        </Link>
 
         <Link
           to="/projects"

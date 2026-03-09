@@ -7,9 +7,54 @@ export default function Navbar() {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const slowScrollToSection = (sectionId, duration = 1400) => {
+    const section = document.getElementById(sectionId);
+    if (!section) {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      section.scrollIntoView();
+      return;
+    }
+
+    const startY = window.scrollY;
+    const targetY = section.getBoundingClientRect().top + window.scrollY;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const step = (currentTime) => {
+      if (!startTime) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY + distance * easedProgress);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const handleSectionScroll = (e, sectionId) => {
+    e.preventDefault();
+    setIsOpen(false);
+    slowScrollToSection(sectionId);
   };
 
   useEffect(() => {
@@ -32,7 +77,11 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav className={`navbar ${isHidden ? "hidden" : ""}`}>
+    <nav
+      className={`navbar ${isHidden ? "hidden" : ""} ${
+        isHomePage ? "" : "navbar-secondary"
+      }`}
+    >
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/">Wely D. Putra</Link>
@@ -45,15 +94,25 @@ export default function Navbar() {
           <Link to="/biography" onClick={() => setIsOpen(false)}>
             About
           </Link>
-          <a href="#projects" onClick={() => setIsOpen(false)}>
-            Projects
-          </a>
-          <a href="#skills" onClick={() => setIsOpen(false)}>
-            Skills
-          </a>
-          <a href="#contact" onClick={() => setIsOpen(false)}>
+          {isHomePage && (
+            <>
+              <a
+                href="#projects"
+                onClick={(e) => handleSectionScroll(e, "projects")}
+              >
+                Projects
+              </a>
+              <a
+                href="#skills"
+                onClick={(e) => handleSectionScroll(e, "skills")}
+              >
+                Skills
+              </a>
+            </>
+          )}
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
             Contact
-          </a>
+          </Link>
           <Link to="/projects" onClick={() => setIsOpen(false)}>
             All Projects
           </Link>
