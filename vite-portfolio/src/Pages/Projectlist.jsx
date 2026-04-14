@@ -45,7 +45,6 @@ function Projectlist() {
       <section className="projectlist-hero">
         <h1>All Projects</h1>
         <p>Explore my complete portfolio of design and development work</p>
-        
       </section>
 
       {/* Projects Grid Section */}
@@ -62,17 +61,22 @@ function Projectlist() {
           </div>
           <div className="projectlist-filter">
             <label htmlFor="project-skill-filter">Filter by skill</label>
-            <select
-              id="project-skill-filter"
-              value={selectedTag}
-              onChange={(event) => setSelectedTag(event.target.value)}
-            >
-              {tagOptions.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag === "all" ? "All skills" : tag}
-                </option>
-              ))}
-            </select>
+            <div className="projectlist-select-wrap">
+              <select
+                id="project-skill-filter"
+                value={selectedTag}
+                onChange={(event) => setSelectedTag(event.target.value)}
+              >
+                {tagOptions.map((tag) => (
+                  <option key={tag} value={tag}>
+                    {tag === "all" ? "All skills" : tag}
+                  </option>
+                ))}
+              </select>
+              <span className="projectlist-select-icon" aria-hidden="true">
+                v
+              </span>
+            </div>
           </div>
         </div>
         <div className="projectlist-grid">

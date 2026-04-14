@@ -59,17 +59,31 @@
   color: #555;
 }
 
+.projectlist-select-wrap {
+  position: relative;
+}
+
 .projectlist-filter select {
-  padding: 0.8rem 1rem;
+  width: 100%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
   border-radius: 999px;
-  border: 1px solid #d6d6d6;
+  border: 1px solid #cfd8dc;
   font-size: 0.95rem;
+  font-weight: 500;
   outline: none;
-  background: linear-gradient(135deg, #ffffff, #f2fbff);
-  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: linear-gradient(135deg, #ffffff, #eaf7ff);
+  color: #1c2a35;
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projectlist-filter select:hover {
+  border-color: #9ad7f4;
 }
 
 .projectlist-filter select option {
@@ -78,8 +92,20 @@
 }
 
 .projectlist-filter select:focus {
-  border-color: #61dafb;
-  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2);
+  border-color: #2aa7dc;
+  box-shadow: 0 0 0 3px rgba(42, 167, 220, 0.2);
+}
+
+.projectlist-select-icon {
+  position: absolute;
+  right: 0.95rem;
+  top: 50%;
+  transform: translateY(-56%);
+  color: #2c5f7a;
+  pointer-events: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .projectlist-search input {
