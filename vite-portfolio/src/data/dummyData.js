@@ -3,68 +3,144 @@ import githubLogo from "../assets/GitHubWhite.png";
 import xLogo from "../assets/X-white.png";
 import linkedinLogo from "../assets/LinkedinWhite.png";
 import instagramLogo from "../assets/InstagramWhite.png";
+import hatchingXStipplingImage from "../assets/HatchingXStippling/HatchingXStippling.png";
+import hatchingCompositingImage from "../assets/HatchingXStippling/Nodes/CompositingNodes/HatchingXStipplingNodes1.png";
+import hatchingLayoutImage1 from "../assets/HatchingXStippling/Nodes/LayoutNodes/HatchingXStipplingNodes2.png";
+import hatchingLayoutImage2 from "../assets/HatchingXStippling/Nodes/LayoutNodes/HatchingXStipplingNodes3.png";
+import hatchingLayoutImage3 from "../assets/HatchingXStippling/Nodes/LayoutNodes/HatchingXStipplingNodes4.png";
+import hatchingLayoutImage4 from "../assets/HatchingXStippling/Nodes/LayoutNodes/HatchingXStipplingNodes5.png";
+import nprCirclesImage from "../assets/NPR/NPR1/Circles.png";
+import nprCirclesCompositingImage from "../assets/NPR/NPR1/Nodes/CompositingNodes/CirclesCompositingNodes.png";
+import nprCirclesLayoutImage1 from "../assets/NPR/NPR1/Nodes/LayoutNodes/CirclesNodesBoxLayout.png";
+import nprCirclesLayoutImage2 from "../assets/NPR/NPR1/Nodes/LayoutNodes/CirclesNodesGroundLayout.png";
+import nprCirclesLayoutImage3 from "../assets/NPR/NPR1/Nodes/LayoutNodes/CirclesNodeSphereLayout.png";
+import nprPaperWorldImage from "../assets/NPR/NPR2/PaperWorld.png";
+import nprPaperWorldCompositingImage from "../assets/NPR/NPR2/CompositingNodes/PaperWorldCompositingNodes.png";
+import nprPaperWorldLayoutImage1 from "../assets/NPR/NPR2/LayoutNodes/AppleBranchLayoutNodes.png";
+import nprPaperWorldLayoutImage2 from "../assets/NPR/NPR2/LayoutNodes/AppleLayoutNodes.png";
+import nprPaperWorldLayoutImage3 from "../assets/NPR/NPR2/LayoutNodes/GroundLayoutNodes.png";
+import nprPaperWorldLayoutImage4 from "../assets/NPR/NPR2/LayoutNodes/MugLayoutNodes.png";
+import nprToonWorldImage from "../assets/NPR/NPR3/ToonWorld.png";
+import nprToonWorldCompositingImage from "../assets/NPR/NPR3/CompositingNodes/ToonWorldCompositingNodes.png";
+import nprToonWorldLayoutImage1 from "../assets/NPR/NPR3/LayoutNodes/DonutLayoutNodes.png";
+import nprToonWorldLayoutImage2 from "../assets/NPR/NPR3/LayoutNodes/GroundLayoutNodes.png";
+import nprToonWorldLayoutImage3 from "../assets/NPR/NPR3/LayoutNodes/MugLayoutNodes.png";
+import painterlyImage from "../assets/Painterly/Painterly.png";
+import painterlyNodeImage from "../assets/Painterly/Node/PainterlyNode.png";
+import cornelBoxImage1 from "../assets/Animation/Cornel Box 1.png";
+import cornelBoxImage2 from "../assets/Animation/Cornel Box 2.png";
+import cornelBoxImage3 from "../assets/Animation/Cornel Box 3.png";
+import cornelBoxImage4 from "../assets/Animation/Cornel Box 4.png";
+import cornelBoxImage5 from "../assets/Animation/Cornel Box 5.png";
+import cornelBoxImage6 from "../assets/Animation/Cornel Box 6.png";
+import cornelBoxImage7 from "../assets/Animation/Cornel Box 7.png";
+import cornelBoxImage8 from "../assets/Animation/Cornel Box 8.png";
+import binusImage1 from "../assets/Binus Website First Phase (Internship)/Binus1.png";
+import binusImage2 from "../assets/Binus Website First Phase (Internship)/Binus2.png";
+import binusImage3 from "../assets/Binus Website First Phase (Internship)/Binus3.png";
+import binusImage4 from "../assets/Binus Website First Phase (Internship)/Binus4.png";
+import binusImage5 from "../assets/Binus Website First Phase (Internship)/Binus5.png";
+import binusImage6 from "../assets/Binus Website First Phase (Internship)/Binus6.png";
 
 export const projectsData = [
   {
     id: 1,
-    title: "Canberra vs South Sydney",
+    title: "BINUS Website (First Phase Internship)",
     description:
-      "An interactive comparison platform showcasing the key differences between two Australian cities. Built with React and Vite for optimal performance.",
-    image: "/project1.jpg",
-    tags: ["Design System", "React", "UI/UX"],
-    category: "Side project",
-    link: "/project/1",
-  },
-  {
-    id: 2,
-    title: "What today's home buyer wants from their home",
-    description:
-      "A comprehensive research and design project exploring modern home buyer preferences. Features interactive data visualization and user research insights.",
-    image: "/project2.jpg",
-    tags: ["Interior Design", "Research", "UX Design"],
-    category: "Side project",
-    link: "/project/2",
-  },
-  {
-    id: 3,
-    title: "Qantas map search",
-    description:
-      "A product design case study for an innovative map-based search interface. Improves user experience for finding flights and destinations.",
-    image: "/project3.jpg",
-    tags: ["Product Design", "User Testing", "Figma"],
-    category: "Product design",
-    link: "/project/3",
-  },
-  {
-    id: 4,
-    title: "E-commerce Platform Redesign",
-    description:
-      "Complete redesign of a leading e-commerce platform focusing on conversion optimization and user experience improvements.",
-    image: "/project4.jpg",
-    tags: ["E-commerce", "Web Design", "Prototyping"],
-    category: "Product design",
-    link: "/project/4",
-  },
-  {
-    id: 5,
-    title: "Mobile App UI Kit",
-    description:
-      "A comprehensive design system and UI kit for mobile applications with 200+ components and design tokens.",
-    image: "/project5.jpg",
-    tags: ["Design System", "Mobile", "Components"],
-    category: "Design System",
+      "A website project completed during internship, focused on layout structure, responsive behavior, and production-ready interface delivery.",
+    image: binusImage1,
+    gallery: [
+      binusImage1,
+      binusImage2,
+      binusImage3,
+      binusImage4,
+      binusImage5,
+      binusImage6,
+    ],
+    videoUrl: "https://youtu.be/qM5Q3RtvZOc",
+    tags: ["JavaScript", "React", "Website","Prototyping","HTML/CSS","Frontend Development","GitHub"],
+    category: "Internship Project",
     link: "/project/5",
   },
   {
-    id: 6,
-    title: "Brand Identity Project",
+    id: 2,
+    title: "HatchingXStippling",
     description:
-      "Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.",
-    image: "/project6.jpg",
-    tags: ["Branding", "Logo Design", "Guidelines"],
-    category: "Branding",
-    link: "/project/6",
+      "A non-photorealistic rendering exploration focused on hatching and stippling style development, including compositing and layout node studies.",
+    image: hatchingXStipplingImage,
+    gallery: [
+      hatchingXStipplingImage,
+      hatchingCompositingImage,
+      hatchingLayoutImage1,
+      hatchingLayoutImage2,
+      hatchingLayoutImage3,
+      hatchingLayoutImage4,
+    ],
+    tags: ["Blender3D", "NPR", "Compositing"],
+    category: "3D Rendering",
+    link: "/project/1",
   },
+  {
+    id: 3,
+    title: "NPR",
+    description:
+      "A grouped showcase of NPR scene outputs and node setups across Circles, PaperWorld, and ToonWorld workflows.",
+    image: nprCirclesImage,
+    gallery: [
+      nprCirclesImage,
+      nprCirclesCompositingImage,
+      nprCirclesLayoutImage1,
+      nprCirclesLayoutImage2,
+      nprCirclesLayoutImage3,
+      nprPaperWorldImage,
+      nprPaperWorldCompositingImage,
+      nprPaperWorldLayoutImage1,
+      nprPaperWorldLayoutImage2,
+      nprPaperWorldLayoutImage3,
+      nprPaperWorldLayoutImage4,
+      nprToonWorldImage,
+      nprToonWorldCompositingImage,
+      nprToonWorldLayoutImage1,
+      nprToonWorldLayoutImage2,
+      nprToonWorldLayoutImage3,
+    ],
+    tags: ["Blender3D", "NPR", "Shader"],
+    category: "3D Rendering",
+    link: "/project/2",
+  },
+  {
+    id: 4,
+    title: "Painterly",
+    description:
+      "A painterly rendering experiment using node-driven stylization to create hand-painted visual character.",
+    image: painterlyImage,
+    gallery: [painterlyImage, painterlyNodeImage],
+    tags: ["Blender3D", "Painterly", "NPR"],
+    category: "3D Rendering",
+    link: "/project/3",
+  },
+  {
+    id: 5,
+    title: "Cornel Box Animation",
+    description:
+      "A Blender lighting and animation study based on a Cornel Box setup, showcasing material response, shadows, and camera framing.",
+    image: cornelBoxImage1,
+    gallery: [
+      cornelBoxImage1,
+      cornelBoxImage2,
+      cornelBoxImage3,
+      cornelBoxImage4,
+      cornelBoxImage5,
+      cornelBoxImage6,
+      cornelBoxImage7,
+      cornelBoxImage8,
+    ],
+    videoUrl: "https://youtu.be/pqJpAHZMF_Q?si=1x5a778qmx4E9S-Q",
+    tags: ["Blender3D", "Animation", "Lighting"],
+    category: "3D Animation",
+    link: "/project/4",
+  },
+  
 ];
 
 // Dummy data for skills
@@ -95,7 +171,8 @@ export const skillsData = {
     "Sketch",
     "Jira",
     "Visual Studio Code",
-    "Blender3D"
+    "Blender3D",
+    "GitHub",
   ],
 };
 
