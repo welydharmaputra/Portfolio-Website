@@ -1,8 +1,30 @@
 import "./Biography.css";
 import { aboutData } from "../data/dummyData";
-import profilePhoto from "../assets/pngegg.png";
+import profilePhoto from "../assets/Profile.JPEG";
+import hobbiesProfilePhoto from "../assets/Biography/Camera.JPEG";
+import parkPhoto from "../assets/Photography/Park2.JPEG";
+import flowersPhoto from "../assets/Photography/Flowers.JPEG";
+import sunlightPhoto from "../assets/Photography/Sunlight1.jpeg";
+import spaceNeedlePhoto from "../assets/Photography/SpaceNeedle1.JPEG";
+import parkPhoto2 from "../assets/Photography/Park3.JPEG";
+import parkPhoto3 from "../assets/Photography/Park4.JPEG";
+import plantPhoto from "../assets/Photography/Plant1.jpeg";
+import spherePhoto from "../assets/Photography/Shpere1.JPEG";
+import sunlightPhoto2 from "../assets/Photography/Sunlight2.jpeg";
 
 export default function Biography() {
+  const hobbiesPhotos = [
+    parkPhoto,
+    flowersPhoto,
+    sunlightPhoto,
+    spaceNeedlePhoto,
+    parkPhoto2,
+    parkPhoto3,
+    plantPhoto,
+    spherePhoto,
+    sunlightPhoto2,
+  ];
+
   return (
     <main className="biography-page">
       <section className="biography-section">
@@ -41,6 +63,50 @@ export default function Biography() {
             </div>
           </article>
         </div>
+
+        <section className="biography-hobbies" aria-label="Hobbies">
+          <div className="biography-hobbies-bg" aria-hidden="true">
+            {hobbiesPhotos.map((photo, index) => (
+              <span
+                key={`hobby-photo-${index}`}
+                className="biography-hobbies-bg-tile"
+                style={{ backgroundImage: `url(${photo})` }}
+              />
+            ))}
+          </div>
+
+          <div className="biography-hobbies-foreground">
+            <div className="biography-hobbies-content">
+              <h3 className="biography-hobbies-title">My Hobbies</h3>
+              <p className="biography-text">
+                Outside of design and development, I enjoy singing and playing
+                drums. Music helps me stay creative and focused, and it gives me
+                fresh energy that I bring back into my work.
+              </p>
+              <p className="biography-text">
+                I also love photography, especially scenery and moments from
+                daily life. You can see some of my photography here:{" "}
+                <a
+                  href="https://www.instagram.com/sceneryby23/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="biography-link"
+                >
+                  @sceneryby23
+                </a>
+                .
+              </p>
+            </div>
+
+            <figure className="biography-hobbies-profile-wrap">
+              <img
+                className="biography-hobbies-profile"
+                src={hobbiesProfilePhoto}
+                alt={`${aboutData.name} hobbies portrait`}
+              />
+            </figure>
+          </div>
+        </section>
       </section>
     </main>
   );

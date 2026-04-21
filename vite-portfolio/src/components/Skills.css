@@ -49,6 +49,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  cursor: grab;
+  touch-action: pan-y;
 }
 
 .skills-marquee-track {
@@ -56,7 +58,16 @@
   align-items: center;
   gap: 2rem;
   width: max-content;
-  animation: skillsMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.skills-marquee.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.skills-marquee-track.is-paused {
+  cursor: pointer;
 }
 
 .skill-bubble {
@@ -88,15 +99,6 @@
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 8px 20px rgba(97, 218, 251, 0.5);
   border-color: rgba(97, 218, 251, 0.5);
-}
-
-@keyframes skillsMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 @keyframes bubbleTilt {
@@ -138,7 +140,6 @@
 
   .skills-marquee-track {
     gap: 1.5rem;
-    animation-duration: 22s;
   }
 
   .skill-bubble {
@@ -168,7 +169,6 @@
 
   .skills-marquee-track {
     gap: 1rem;
-    animation-duration: 18s;
   }
 
   .skill-bubble {

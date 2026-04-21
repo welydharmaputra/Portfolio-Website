@@ -41,13 +41,30 @@ import binusImage3 from "../assets/Binus Website First Phase (Internship)/Binus3
 import binusImage4 from "../assets/Binus Website First Phase (Internship)/Binus4.png";
 import binusImage5 from "../assets/Binus Website First Phase (Internship)/Binus5.png";
 import binusImage6 from "../assets/Binus Website First Phase (Internship)/Binus6.png";
+import appleOpenGL1 from "../assets/AppleOpenGL/apple1.png";
+import appleOpenGL2 from "../assets/AppleOpenGL/apple2.png";
+import appleOpenGL3 from "../assets/AppleOpenGL/apple3.png";
+import appleOpenGL4 from "../assets/AppleOpenGL/apple4.png";
+import nuclearOpenGL1 from "../assets/NuclearOpenGL/Bomb1.png";
+import nuclearOpenGL2 from "../assets/NuclearOpenGL/Bomb2.png";
+import nuclearOpenGL3 from "../assets/NuclearOpenGL/Bomb3.png";
+import wireframing1 from "../assets/Wireframing/Wireframing1.png";
+import wireframing2 from "../assets/Wireframing/Wireframing2.png";
+import wireframing3 from "../assets/Wireframing/wireframing3.png";
+import wireframing4 from "../assets/Wireframing/Wireframing4.png";
+import wireframing5 from "../assets/Wireframing/Wireframing5.png";
+import wireframing6 from "../assets/Wireframing/wireframing6.png";
+import wireframing7 from "../assets/Wireframing/Wireframing7.png";
+import wireframing8 from "../assets/Wireframing/Wireframing8.png";
+import wireframing9 from "../assets/Wireframing/Wireframing9.png";
+import wireframing10 from "../assets/Wireframing/Wireframing10.png";
 
 export const projectsData = [
   {
     id: 1,
     title: "BINUS Website (First Phase Internship)",
     description:
-      "A website project completed during internship, focused on layout structure, responsive behavior, and production-ready interface delivery.",
+      "A production-focused internship build for BINUS, centered on responsive layouts, clean information hierarchy, and reliable frontend implementation.",
     image: binusImage1,
     gallery: [
       binusImage1,
@@ -58,7 +75,15 @@ export const projectsData = [
       binusImage6,
     ],
     videoUrl: "https://youtu.be/qM5Q3RtvZOc",
-    tags: ["JavaScript", "React", "Website","Prototyping","HTML/CSS","Frontend Development","GitHub"],
+    tags: [
+      "JavaScript",
+      "React",
+      "Website",
+      "Prototyping",
+      "HTML/CSS",
+      "Frontend Development",
+      "GitHub",
+    ],
     category: "Internship Project",
     link: "/project/5",
   },
@@ -66,7 +91,7 @@ export const projectsData = [
     id: 2,
     title: "HatchingXStippling",
     description:
-      "A non-photorealistic rendering exploration focused on hatching and stippling style development, including compositing and layout node studies.",
+      "A non-photorealistic rendering study exploring hatching and stippling techniques, with iterative compositing and layout node experimentation.",
     image: hatchingXStipplingImage,
     gallery: [
       hatchingXStipplingImage,
@@ -84,7 +109,7 @@ export const projectsData = [
     id: 3,
     title: "NPR",
     description:
-      "A grouped showcase of NPR scene outputs and node setups across Circles, PaperWorld, and ToonWorld workflows.",
+      "A curated NPR collection featuring Circles, PaperWorld, and ToonWorld, highlighting style variation and end-to-end node workflows.",
     image: nprCirclesImage,
     gallery: [
       nprCirclesImage,
@@ -112,7 +137,7 @@ export const projectsData = [
     id: 4,
     title: "Painterly",
     description:
-      "A painterly rendering experiment using node-driven stylization to create hand-painted visual character.",
+      "A painterly rendering experiment that uses node-based stylization to produce a hand-painted aesthetic with controlled texture and tone.",
     image: painterlyImage,
     gallery: [painterlyImage, painterlyNodeImage],
     tags: ["Blender3D", "Painterly", "NPR"],
@@ -123,7 +148,7 @@ export const projectsData = [
     id: 5,
     title: "Cornel Box Animation",
     description:
-      "A Blender lighting and animation study based on a Cornel Box setup, showcasing material response, shadows, and camera framing.",
+      "A Blender lighting and animation exercise based on a Cornell Box scene, focused on material behavior, shadow quality, and cinematic framing.",
     image: cornelBoxImage1,
     gallery: [
       cornelBoxImage1,
@@ -140,7 +165,52 @@ export const projectsData = [
     category: "3D Animation",
     link: "/project/4",
   },
-  
+  {
+    id: 6,
+    title: "Apple OpenGL",
+    description:
+      "An OpenGL graphics project exploring modern rendering pipelines, shader control, and performance-conscious GPU techniques.",
+    image: appleOpenGL1,
+    gallery: [appleOpenGL1, appleOpenGL2, appleOpenGL3, appleOpenGL4],
+    videoUrl: "https://youtu.be/Qybr56819zA?si=EPWNx3wifoB2_Pig",
+    tags: ["OpenGL", "Graphics", "C++"],
+    category: "Graphics Programming",
+    link: "/project/6",
+  },
+  {
+    id: 7,
+    title: "Nuclear Missile OpenGL",
+    description:
+      "An OpenGL rendering project showcasing complex 3D assets with advanced lighting, camera composition, and dramatic visual effects.",
+    image: nuclearOpenGL1,
+    gallery: [nuclearOpenGL1, nuclearOpenGL2, nuclearOpenGL3],
+    videoUrl: "https://youtu.be/R6h-HYP7ULE?si=ve36nkmKkLtne_yc",
+    tags: ["OpenGL", "Graphics", "C++"],
+    category: "Graphics Programming",
+    link: "/project/7",
+  },
+  {
+    id: 8,
+    title: "Wireframing BookAService",
+    description:
+      "A BookAService wireframing project focused on mapping user journeys, clarifying page hierarchy, and validating early product structure.",
+    image: wireframing1,
+    gallery: [
+      wireframing2,
+      wireframing3,
+      wireframing4,
+      wireframing5,
+      wireframing6,
+      wireframing7,
+      wireframing8,
+      wireframing9,
+      wireframing10,
+      wireframing1,
+    ],
+    tags: ["Wireframing", "UI/UX", "Prototype"],
+    category: "UI/UX Design",
+    link: "/project/8",
+  },
 ];
 
 // Dummy data for skills
@@ -180,7 +250,7 @@ export const skillsData = {
 export const aboutData = {
   name: "Wely D. Putra",
   title: "UI/UX Designer & Frontend Developer",
-  bio: "I'm a passionate designer and developer with 5+ years of experience creating beautiful, user-centered digital experiences. I specialize in bridging the gap between design and development.",
+  bio: "I'm a developer and designer who loves building interfaces that feel as good as they look. I work across the full stack, from Figma mockups to React frontends to Python data pipelines, and I care about getting the details right at every layer.",
   location: "Oregon, United States",
   email: "welydharmaputra93@gmail.com",
   phone: "+1 971-406-7578",

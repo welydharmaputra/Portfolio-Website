@@ -4,12 +4,110 @@
   background-color: #f5f5f5;
   color: #333;
   padding: 4rem 0;
+  --page-delay: 0.7s;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation: fadeInPage 0.6s ease-in;
+  animation-delay: var(--page-delay);
+  animation-fill-mode: both;
+}
+
+.biography-page::before,
+.biography-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 40%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.biography-page::before {
+  width: min(58vw, 760px);
+  height: min(58vw, 760px);
+  top: -18%;
+  left: -14%;
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(189, 120, 255, 0.35),
+      transparent 62%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(125, 74, 236, 0.28),
+      transparent 70%
+    );
+  animation: gasDriftOne 17s ease-in-out infinite alternate;
+}
+
+.biography-page::after {
+  width: min(54vw, 680px);
+  height: min(54vw, 680px);
+  right: -10%;
+  bottom: -16%;
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      rgba(169, 92, 255, 0.3),
+      transparent 64%
+    ),
+    radial-gradient(circle at 75% 60%, rgba(92, 43, 196, 0.24), transparent 72%);
+  animation: gasDriftTwo 21s ease-in-out infinite alternate;
+}
+
+.biography-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gasDriftOne {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(40px, 22px, 0) scale(1.07);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(80px, 45px, 0) scale(0.96);
+    opacity: 0.75;
+  }
+}
+
+@keyframes gasDriftTwo {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.72;
+  }
+  45% {
+    transform: translate3d(-34px, -18px, 0) scale(1.06);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(-72px, -34px, 0) scale(0.94);
+    opacity: 0.68;
+  }
 }
 
 .biography-section {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 2rem;
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
 }
 
 .biography-title {
@@ -66,6 +164,155 @@
   margin: 0 0 1rem;
 }
 
+.biography-hobbies {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.biography-hobbies::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.58);
+  z-index: 1;
+}
+
+.biography-hobbies-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+.biography-hobbies-bg-tile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.biography-hobbies-bg-tile:nth-child(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.biography-hobbies-bg-tile:nth-child(2) {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.biography-hobbies-bg-tile:nth-child(3) {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.biography-hobbies-bg-tile:nth-child(4) {
+  grid-column: 6 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.biography-hobbies-bg-tile:nth-child(5) {
+  grid-column: 4 / span 3;
+  grid-row: 2 / span 2;
+}
+
+.biography-hobbies-bg-tile:nth-child(6) {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.biography-hobbies-bg-tile:nth-child(7) {
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.biography-hobbies-bg-tile:nth-child(8) {
+  grid-column: 1 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.biography-hobbies-bg-tile:nth-child(9) {
+  grid-column: 4 / span 3;
+  grid-row: 4 / span 1;
+}
+
+.biography-hobbies-content {
+  text-align: left;
+  max-width: 620px;
+  flex: 1 1 620px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(4px);
+}
+
+.biography-hobbies-foreground {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: min(1100px, calc(100vw - 4rem));
+  margin: 0 auto;
+  transform: translateX(72px);
+}
+
+.biography-hobbies-profile-wrap {
+  flex: 0 0 260px;
+  width: 260px;
+  height: 320px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 18px 40px rgba(20, 20, 20, 0.18);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.biography-hobbies-profile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.biography-hobbies-title {
+  margin: 0 0 0.65rem;
+  font-size: 1.2rem;
+  color: #2b2b2b;
+}
+
+.biography-link {
+  color: #7f4d2b;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(127, 77, 43, 0.45);
+}
+
+.biography-link:hover {
+  color: #5e381f;
+  border-bottom-color: rgba(94, 56, 31, 0.8);
+}
+
 .biography-meta {
   display: flex;
   gap: 0.75rem;
@@ -84,6 +331,10 @@
 }
 
 @media (max-width: 768px) {
+  .biography-section {
+    min-height: auto;
+  }
+
   .biography-title {
     font-size: 2rem;
   }
@@ -104,5 +355,90 @@
 
   .biography-meta {
     justify-content: center;
+  }
+
+  .biography-hobbies {
+    margin-top: 1.5rem;
+    min-height: 540px;
+    text-align: center;
+  }
+
+  .biography-hobbies-bg {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(1) {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(2) {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(3) {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(5) {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 2;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(6) {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(7) {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(8) {
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+  }
+
+  .biography-hobbies-bg-tile:nth-child(9) {
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+  }
+
+  .biography-hobbies-foreground {
+    flex-direction: column;
+    width: min(100%, calc(100vw - 1rem));
+    gap: 1rem;
+    transform: none;
+  }
+
+  .biography-hobbies-content {
+    text-align: center;
+    max-width: 100%;
+    flex-basis: auto;
+    padding: 1.1rem;
+  }
+
+  .biography-hobbies-profile-wrap {
+    width: min(280px, calc(100vw - 2rem));
+    height: 300px;
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biography-page::before,
+  .biography-page::after {
+    animation: none;
   }
 }
