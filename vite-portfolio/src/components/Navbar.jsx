@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import welyLogo from "../assets/WelyLogo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +85,9 @@ export default function Navbar() {
     >
       <div className="navbar-container">
         <div className="navbar-logo">
-          <Link to="/">Wely D. Putra</Link>
+          <Link to="/" aria-label="Wely D. Putra home">
+            <img src={welyLogo} alt="Wely logo" />
+          </Link>
         </div>
 
         <div className={`navbar-menu ${isOpen ? "active" : ""}`}>
