@@ -80,15 +80,20 @@
 }
 
 .navbar-logo a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .navbar-logo a:hover {
-  color: #61dafb;
+  opacity: 0.85;
+}
+
+.navbar-logo img {
+  width: 76px;
+  height: auto;
+  display: block;
 }
 
 .navbar-menu {
@@ -231,8 +236,8 @@
     padding: 0 1rem;
   }
 
-  .navbar-logo a {
-    font-size: 1.5rem;
+  .navbar-logo img {
+    width: 64px;
   }
 }
 

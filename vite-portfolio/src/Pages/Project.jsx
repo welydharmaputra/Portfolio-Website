@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projectsData } from "../data/dummyData";
 import "./Project.css";
@@ -53,11 +53,17 @@ function Project() {
   }, [project, embedVideoUrl]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
+  const [isDraggingSlide, setIsDraggingSlide] = useState(false);
+  const swipeStartXRef = useRef(null);
+  const didSwipeRef = useRef(false);
   const activeSlide = sliderItems[activeIndex];
 
   useEffect(() => {
     setActiveIndex(0);
     setIsFullscreenOpen(false);
+    setIsDraggingSlide(false);
+    swipeStartXRef.current = null;
+    didSwipeRef.current = false;
   }, [id]);
 
   useEffect(() => {
@@ -82,6 +88,64 @@ function Project() {
       currentIndex === sliderItems.length - 1 ? 0 : currentIndex + 1,
     );
   };
+
+  const startSwipe = (clientX) => {
+    if (sliderItems.length <= 1 || activeSlide?.type !== "image") {
+      return;
+    }
+
+    swipeStartXRef.current = clientX;
+    didSwipeRef.current = false;
+    setIsDraggingSlide(true);
+  };
+
+  const endSwipe = (clientX) => {
+    if (swipeStartXRef.current === null) {
+      return;
+    }
+
+    const deltaX = clientX - swipeStartXRef.current;
+    const swipeThreshold = 50;
+
+    if (Math.abs(deltaX) > swipeThreshold) {
+      didSwipeRef.current = true;
+      if (deltaX > 0) {
+        goToPrevious();
+      } else {
+        goToNext();
+      }
+    }
+
+    swipeStartXRef.current = null;
+    setIsDraggingSlide(false);
+  };
+
+  const cancelSwipe = () => {
+    swipeStartXRef.current = null;
+    setIsDraggingSlide(false);
+  };
+
+  const handleMainImageClick = () => {
+    if (didSwipeRef.current) {
+      didSwipeRef.current = false;
+      return;
+    }
+
+    setIsFullscreenOpen(true);
+  };
+
+  const imageGestureHandlers = {
+    onMouseDown: (event) => startSwipe(event.clientX),
+    onMouseUp: (event) => endSwipe(event.clientX),
+    onMouseLeave: cancelSwipe,
+    onTouchStart: (event) => startSwipe(event.touches[0].clientX),
+    onTouchEnd: (event) => endSwipe(event.changedTouches[0].clientX),
+    onTouchCancel: cancelSwipe,
+    onDragStart: (event) => event.preventDefault(),
+  };
+  const imageStateClasses = `${
+    sliderItems.length > 1 ? "is-draggable" : ""
+  } ${isDraggingSlide ? "is-dragging" : ""}`.trim();
 
   if (!project) {
     return (
@@ -114,8 +178,9 @@ function Project() {
           <img
             src={activeSlide?.src}
             alt={`${project.title} preview ${activeIndex + 1}`}
-            className="project-main-image"
-            onClick={() => setIsFullscreenOpen(true)}
+            className={`project-main-image ${imageStateClasses}`.trim()}
+            onClick={handleMainImageClick}
+            {...imageGestureHandlers}
           />
         )}
         <button
@@ -225,8 +290,9 @@ function Project() {
             <img
               src={activeSlide.src}
               alt={`${project.title} full preview ${activeIndex + 1}`}
-              className="lightbox-image"
+              className={`lightbox-image ${imageStateClasses}`.trim()}
               onClick={(event) => event.stopPropagation()}
+              {...imageGestureHandlers}
             />
           )}
         </div>

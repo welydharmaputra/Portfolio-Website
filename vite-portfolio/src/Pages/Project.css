@@ -150,6 +150,19 @@
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   animation: zoomIn 0.7s ease-out 0.2s both;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: zoom-in;
+}
+
+.project-main-image.is-draggable,
+.lightbox-image.is-draggable {
+  cursor: grab;
+}
+
+.project-main-image.is-dragging,
+.lightbox-image.is-dragging {
+  cursor: grabbing;
 }
 
 .project-main-video {
