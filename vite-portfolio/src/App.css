@@ -28,6 +28,16 @@ body {
   flex-direction: column;
 }
 
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
