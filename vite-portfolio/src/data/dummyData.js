@@ -58,6 +58,13 @@ import wireframing7 from "../assets/Wireframing/Wireframing7.png";
 import wireframing8 from "../assets/Wireframing/Wireframing8.png";
 import wireframing9 from "../assets/Wireframing/Wireframing9.png";
 import wireframing10 from "../assets/Wireframing/Wireframing10.png";
+import uiuxWeatherImage from "../assets/UIUX National Weather Service School Project/UIUX.jpg";
+import uiuxWeatherImage1 from "../assets/UIUX National Weather Service School Project/UIUX1.jpg";
+import uiuxWeatherImage2 from "../assets/UIUX National Weather Service School Project/UIUX2.jpg";
+import uiuxWeatherImage3 from "../assets/UIUX National Weather Service School Project/UIUX3.jpg";
+import uiuxWeatherImage4 from "../assets/UIUX National Weather Service School Project/UIUX4.jpg";
+import uiuxWeatherImage5 from "../assets/UIUX National Weather Service School Project/UIUX5.jpg";
+import uiuxWeatherImage6 from "../assets/UIUX National Weather Service School Project/UIUX6.jpg";
 
 export const projectsData = [
   {
@@ -210,6 +217,25 @@ export const projectsData = [
     tags: ["Wireframing", "UI/UX", "Prototype"],
     category: "UI/UX Design",
     link: "/project/8",
+  },
+  {
+    id: 9,
+    title: "UIUX National Weather Service School Project",
+    description:
+      "A school UI/UX project for a National Weather Service concept, focused on information clarity, accessibility, and user-friendly weather workflows.",
+    image: uiuxWeatherImage,
+    gallery: [
+      uiuxWeatherImage,
+      uiuxWeatherImage1,
+      uiuxWeatherImage2,
+      uiuxWeatherImage3,
+      uiuxWeatherImage4,
+      uiuxWeatherImage5,
+      uiuxWeatherImage6,
+    ],
+    tags: ["UI/UX", "Weather App", "Figma", "Wireframing", "Prototyping"],
+    category: "UI/UX Design",
+    link: "/project/9",
   },
 ];
 
