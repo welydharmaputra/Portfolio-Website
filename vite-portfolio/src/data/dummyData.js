@@ -65,6 +65,37 @@ import uiuxWeatherImage3 from "../assets/UIUX National Weather Service School Pr
 import uiuxWeatherImage4 from "../assets/UIUX National Weather Service School Project/UIUX4.jpg";
 import uiuxWeatherImage5 from "../assets/UIUX National Weather Service School Project/UIUX5.jpg";
 import uiuxWeatherImage6 from "../assets/UIUX National Weather Service School Project/UIUX6.jpg";
+import cubeMappingImage1 from "../assets/CubeMapping/Map1.jpg";
+import cubeMappingImage2 from "../assets/CubeMapping/Map2.jpg";
+import cubeMappingImage3 from "../assets/CubeMapping/Map3.jpg";
+import displacementImage1 from "../assets/Displacement/Dis1.jpg";
+import displacementImage2 from "../assets/Displacement/Dis2.jpg";
+import displacementImage3 from "../assets/Displacement/Dis3.jpg";
+import displacementImage4 from "../assets/Displacement/Dis4.jpg";
+import displacementImage5 from "../assets/Displacement/Dis5.jpg";
+import displacementImage6 from "../assets/Displacement/dis6.jpg";
+import displacementImage7 from "../assets/Displacement/dis7.jpg";
+import geometryShadersImage1 from "../assets/GeometryShaders/Geo1.jpg";
+import geometryShadersImage2 from "../assets/GeometryShaders/Geo2.jpg";
+import geometryShadersImage3 from "../assets/GeometryShaders/Geo3.jpg";
+import geometryShadersImage4 from "../assets/GeometryShaders/Geo4.jpg";
+import geometryShadersImage5 from "../assets/GeometryShaders/Geo5.jpg";
+import lightingImage1 from "../assets/Ligthing/fish1.jpg";
+import lightingImage2 from "../assets/Ligthing/fish2.jpg";
+import lightingImage3 from "../assets/Ligthing/fish3.jpg";
+import lightingImage4 from "../assets/Ligthing/fish4.jpg";
+import magicLensImage1 from "../assets/MagicLens/Lens1.jpg";
+import magicLensImage2 from "../assets/MagicLens/Lens2.jpg";
+import magicLensImage3 from "../assets/MagicLens/Lens3.jpg";
+import magicLensImage4 from "../assets/MagicLens/Lens4.jpg";
+import magicLensImage5 from "../assets/MagicLens/Lens5.jpg";
+import menagerieImage1 from "../assets/Menagrie/Snake1.jpg";
+import menagerieImage2 from "../assets/Menagrie/Snake2.jpg";
+import menagerieImage3 from "../assets/Menagrie/Snake3.jpg";
+import menagerieImage4 from "../assets/Menagrie/Snake4.jpg";
+import menagerieImage5 from "../assets/Menagrie/Snake5.jpg";
+import menagerieImage6 from "../assets/Menagrie/Snake6.jpg";
+import menagerieImage7 from "../assets/Menagrie/Snake7.jpg";
 
 export const projectsData = [
   {
@@ -236,6 +267,100 @@ export const projectsData = [
     tags: ["UI/UX", "Weather App", "Figma", "Wireframing", "Prototyping"],
     category: "UI/UX Design",
     link: "/project/9",
+  },
+  {
+    id: 10,
+    title: "Cube Mapping",
+    description:
+      "A graphics study focused on environment reflections and skybox-driven rendering using cube map textures.",
+    image: cubeMappingImage1,
+    gallery: [cubeMappingImage1, cubeMappingImage2, cubeMappingImage3],
+    tags: ["OpenGL", "Graphics", "Cube Map"],
+    category: "Graphics Programming",
+    link: "/project/10",
+  },
+  {
+    id: 11,
+    title: "Displacement",
+    description:
+      "A displacement-focused rendering exploration testing surface depth, material behavior, and stylized deformation.",
+    image: displacementImage1,
+    gallery: [
+      displacementImage1,
+      displacementImage2,
+      displacementImage3,
+      displacementImage4,
+      displacementImage5,
+      displacementImage6,
+      displacementImage7,
+    ],
+    tags: ["OpenGL", "Graphics", "Displacement"],
+    category: "Graphics Programming",
+    link: "/project/11",
+  },
+  {
+    id: 12,
+    title: "Geometry Shaders",
+    description:
+      "An advanced shader pipeline project demonstrating geometry shader stages and procedural visual effects.",
+    image: geometryShadersImage1,
+    gallery: [
+      geometryShadersImage1,
+      geometryShadersImage2,
+      geometryShadersImage3,
+      geometryShadersImage4,
+      geometryShadersImage5,
+    ],
+    tags: ["OpenGL", "Shaders", "Graphics"],
+    category: "Graphics Programming",
+    link: "/project/12",
+  },
+  {
+    id: 13,
+    title: "Lighting Study",
+    description:
+      "A lighting and shading practice project using aquatic subject matter to compare highlights, shadow falloff, and tone.",
+    image: lightingImage1,
+    gallery: [lightingImage1, lightingImage2, lightingImage3, lightingImage4],
+    tags: ["Lighting", "3D", "Render"],
+    category: "3D Rendering",
+    link: "/project/13",
+  },
+  {
+    id: 14,
+    title: "Magic Lens",
+    description:
+      "A visual experiment centered on lens-driven distortion and selective reveal techniques for stylized scene exploration.",
+    image: magicLensImage1,
+    gallery: [
+      magicLensImage1,
+      magicLensImage2,
+      magicLensImage3,
+      magicLensImage4,
+      magicLensImage5,
+    ],
+    tags: ["OpenGL", "Post Processing", "Lens Effects"],
+    category: "Graphics Programming",
+    link: "/project/14",
+  },
+  {
+    id: 15,
+    title: "Menagerie",
+    description:
+      "A creature-focused rendering set that explores composition, texture detail, and dramatic framing choices.",
+    image: menagerieImage1,
+    gallery: [
+      menagerieImage1,
+      menagerieImage2,
+      menagerieImage3,
+      menagerieImage4,
+      menagerieImage5,
+      menagerieImage6,
+      menagerieImage7,
+    ],
+    tags: ["3D", "Rendering", "Character"],
+    category: "3D Rendering",
+    link: "/project/15",
   },
 ];
 
