@@ -72,7 +72,7 @@ export default function FloatingMenu() {
   return (
     <div className="floating-menu">
       <button className="fab-main" onClick={toggleMenu} title="Menu">
-        <span className={`fab-icon ${isOpen ? "open" : ""}`}>+</span>
+        <span className={`fab-icon ${isOpen ? "open" : ""}`} />
       </button>
 
       <div className={`fab-menu ${isOpen ? "active" : ""}`}>
