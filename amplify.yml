@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd vite-portfolio && npm ci
+    build:
+      commands:
+        - cd vite-portfolio && npm run build
+  artifacts:
+    baseDirectory: vite-portfolio/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - vite-portfolio/node_modules/**/*
