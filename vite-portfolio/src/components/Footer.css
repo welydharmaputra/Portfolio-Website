@@ -1,9 +1,9 @@
 .footer-section {
-  background-color: #1f1f1f;
+  background-color: #0f172a;
   color: #e0e0e0;
   padding: 3rem 2rem 2rem;
   margin-top: 0;
-  border-top: 1px solid #333;
+  border-top: 1px solid rgba(96, 165, 250, 0.15);
 }
 
 .footer-content {
@@ -113,8 +113,8 @@
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid #333;
-  color: #808080;
+  border-top: 1px solid rgba(96, 165, 250, 0.12);
+  color: rgba(148, 185, 255, 0.5);
 }
 
 @media (max-width: 768px) {

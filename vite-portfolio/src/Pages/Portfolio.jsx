@@ -1,5 +1,5 @@
 import "./Portfolio.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { projectsData, aboutData } from "../data/dummyData";
 import Skills from "../components/Skills";
@@ -9,6 +9,24 @@ function Portfolio() {
   const projects = projectsData.slice(0, 10);
   const about = aboutData;
   const [heroScrollProgress, setHeroScrollProgress] = useState(0);
+  const heroRef = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const [displayedBio, setDisplayedBio] = useState("");
+  const [bioTypingDone, setBioTypingDone] = useState(false);
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        size: 2.5 + Math.random() * 4,
+        x: Math.random() * 88 + 6,
+        y: Math.random() * 82 + 6,
+        duration: 5 + Math.random() * 6,
+        delay: -(Math.random() * 10),
+        opacity: 0.18 + Math.random() * 0.42,
+      })),
+    []
+  );
 
   useEffect(() => {
     const updateHeroScrollProgress = () => {
@@ -28,6 +46,40 @@ function Portfolio() {
       window.removeEventListener("resize", updateHeroScrollProgress);
     };
   }, []);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const handleMouseMove = (e) => {
+      const rect = hero.getBoundingClientRect();
+      setMousePos({
+        x: ((e.clientX - rect.left) / rect.width) * 100,
+        y: ((e.clientY - rect.top) / rect.height) * 100,
+      });
+    };
+    hero.addEventListener("mousemove", handleMouseMove);
+    return () => hero.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const bioText = about.shortBio;
+    let index = 0;
+    let interval;
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        index++;
+        setDisplayedBio(bioText.slice(0, index));
+        if (index >= bioText.length) {
+          clearInterval(interval);
+          setBioTypingDone(true);
+        }
+      }, 36);
+    }, 1100);
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
+  }, [about.shortBio]);
 
   useEffect(() => {
     const revealElements = document.querySelectorAll(".reveal-on-scroll");
@@ -53,7 +105,7 @@ function Portfolio() {
       {
         threshold: 0.14,
         rootMargin: "0px 0px -8% 0px",
-      },
+      }
     );
 
     revealElements.forEach((element) => observer.observe(element));
@@ -69,16 +121,69 @@ function Portfolio() {
     <div className="portfolio-container">
       {/* Image Section */}
       <section
+        ref={heroRef}
         className="portfolio-hero"
         style={{
           "--hero-bg-offset": `${heroScrollProgress * 120}px`,
           "--hero-overlay-opacity": `${1 - heroScrollProgress * 0.4}`,
+          "--mouse-x": `${mousePos.x}%`,
+          "--mouse-y": `${mousePos.y}%`,
         }}
       >
+        {/* Aurora animated blobs */}
+        <div className="hero-aurora" aria-hidden="true">
+          <div className="aurora-blob aurora-blob--1" />
+          <div className="aurora-blob aurora-blob--2" />
+          <div className="aurora-blob aurora-blob--3" />
+          <div className="aurora-blob aurora-blob--4" />
+        </div>
+
+        {/* Pulsing rings */}
+        <div className="hero-rings" aria-hidden="true">
+          <span className="hero-ring" style={{ "--ri": 0 }} />
+          <span className="hero-ring" style={{ "--ri": 1 }} />
+          <span className="hero-ring" style={{ "--ri": 2 }} />
+          <span className="hero-ring" style={{ "--ri": 3 }} />
+        </div>
+
+        {/* Shooting stars */}
+        <div className="hero-shooting-stars" aria-hidden="true">
+          <span className="shooting-star" style={{ "--si": 0 }} />
+          <span className="shooting-star" style={{ "--si": 1 }} />
+          <span className="shooting-star" style={{ "--si": 2 }} />
+          <span className="shooting-star" style={{ "--si": 3 }} />
+          <span className="shooting-star" style={{ "--si": 4 }} />
+        </div>
+
+        {/* Mouse-reactive spotlight */}
+        <div className="hero-spotlight" aria-hidden="true" />
+
+        {/* Floating particles */}
+        <div className="hero-particles" aria-hidden="true">
+          {particles.map((p) => (
+            <span
+              key={p.id}
+              className="hero-particle"
+              style={{
+                left: `${p.x}%`,
+                top: `${p.y}%`,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                animationDuration: `${p.duration}s`,
+                animationDelay: `${p.delay}s`,
+                opacity: p.opacity,
+              }}
+            />
+          ))}
+        </div>
+
         <div className="hero-image" aria-hidden="true"></div>
         <div className="hero-text">
           <h1>{about.name}</h1>
-          <p>{about.shortBio}</p>
+          <p>
+            {displayedBio}
+            {!bioTypingDone && <span className="cursor-blink">|</span>}
+          </p>
         </div>
       </section>
 
