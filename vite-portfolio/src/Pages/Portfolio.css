@@ -1,8 +1,8 @@
 .portfolio-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #f0f4ff;
+  color: #1e293b;
   padding: 0 0 2rem;
   --page-delay: 0.7s;
   position: relative;
@@ -31,12 +31,12 @@
   background:
     radial-gradient(
       circle at 30% 30%,
-      rgba(189, 120, 255, 0.35),
+      rgba(99, 102, 241, 0.28),
       transparent 62%
     ),
     radial-gradient(
       circle at 70% 65%,
-      rgba(125, 74, 236, 0.28),
+      rgba(139, 92, 246, 0.22),
       transparent 70%
     );
   animation: gasDriftOne 17s ease-in-out infinite alternate;
@@ -50,10 +50,10 @@
   background:
     radial-gradient(
       circle at 35% 35%,
-      rgba(169, 92, 255, 0.3),
+      rgba(59, 130, 246, 0.25),
       transparent 64%
     ),
-    radial-gradient(circle at 75% 60%, rgba(92, 43, 196, 0.24), transparent 72%);
+    radial-gradient(circle at 75% 60%, rgba(6, 182, 212, 0.18), transparent 72%);
   animation: gasDriftTwo 21s ease-in-out infinite alternate;
 }
 
@@ -77,94 +77,79 @@
   transform: translateY(0) scale(1);
 }
 
-/* Fade in animation for page load */
+/* ─── Keyframes ─────────────────────────────────────────────── */
+
 @keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-/* Slide down animation for hero section */
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Reveal animation for hero content */
 @keyframes revealUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Subtle float for the hero image */
 @keyframes gentleFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
 }
 
-/* Slide up animation for project cards */
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes gasDriftOne {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate3d(40px, 22px, 0) scale(1.07);
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(80px, 45px, 0) scale(0.96);
-    opacity: 0.75;
-  }
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  50%  { transform: translate3d(40px, 22px, 0) scale(1.07); opacity: 1; }
+  100% { transform: translate3d(80px, 45px, 0) scale(0.96); opacity: 0.75; }
 }
 
 @keyframes gasDriftTwo {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.72;
-  }
-  45% {
-    transform: translate3d(-34px, -18px, 0) scale(1.06);
-    opacity: 0.95;
-  }
-  100% {
-    transform: translate3d(-72px, -34px, 0) scale(0.94);
-    opacity: 0.68;
-  }
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.72; }
+  45%  { transform: translate3d(-34px, -18px, 0) scale(1.06); opacity: 0.95; }
+  100% { transform: translate3d(-72px, -34px, 0) scale(0.94); opacity: 0.68; }
 }
 
-/* Hero Section with Profile Image */
+@keyframes blobOne {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(70px, 55px) scale(1.18); }
+}
+
+@keyframes blobTwo {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-55px, -38px) scale(1.12); }
+}
+
+@keyframes blobThree {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-25px, -48px) scale(1.09); }
+  100% { transform: translate(38px, 22px) scale(0.9); }
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  33%       { transform: translateY(-16px) translateX(6px) scale(1.15); }
+  66%       { transform: translateY(8px) translateX(-4px) scale(0.88); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(8px); }
+}
+
+/* ─── Hero Section ───────────────────────────────────────────── */
+
 .portfolio-hero {
   display: flex;
   flex-direction: row;
@@ -183,49 +168,221 @@
   min-height: 100svh;
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(rgba(236, 246, 255, 0.84), rgba(224, 241, 255, 0.84)),
-    url("../assets/WelyBG.svg");
-  background-repeat: no-repeat;
-  background-position: center calc(50% + var(--hero-bg-offset, 0px));
-  background-size: cover;
-  box-shadow:
-    0 22px 48px rgba(45, 97, 140, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 45%, #ecfeff 100%);
+  box-shadow: 0 22px 48px rgba(99, 102, 241, 0.1);
+  cursor: crosshair;
 }
 
+/* Subtle grid overlay */
 .portfolio-hero::before {
   content: "";
   position: absolute;
-  inset: -30% auto auto -15%;
-  width: min(58vw, 620px);
-  height: min(58vw, 620px);
-  border-radius: 45%;
-  background: radial-gradient(
-    circle,
-    rgba(100, 181, 246, 0.22),
-    rgba(100, 181, 246, 0)
-  );
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+  background-size: 65px 65px;
   pointer-events: none;
+  z-index: 0;
 }
 
-.portfolio-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
+/* Scroll-out overlay */
 .portfolio-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(236, 246, 255, 0.38),
-    rgba(224, 241, 255, 0.45)
-  );
+  background: rgba(238, 242, 255, 0.15);
   opacity: var(--hero-overlay-opacity, 1);
   pointer-events: none;
+  z-index: 1;
 }
+
+.portfolio-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Aurora animated blobs ──────────────────────────────────── */
+
+.hero-aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  will-change: transform;
+}
+
+.aurora-blob--1 {
+  width: min(60vw, 640px);
+  height: min(60vw, 640px);
+  top: -22%;
+  left: -12%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.5),
+    rgba(129, 140, 248, 0.24) 50%,
+    transparent 70%
+  );
+  animation: blobOne 14s ease-in-out infinite alternate;
+}
+
+.aurora-blob--2 {
+  width: min(52vw, 560px);
+  height: min(52vw, 560px);
+  top: 15%;
+  right: -14%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.45),
+    rgba(196, 181, 253, 0.2) 50%,
+    transparent 70%
+  );
+  animation: blobTwo 18s ease-in-out infinite alternate;
+}
+
+.aurora-blob--3 {
+  width: min(40vw, 420px);
+  height: min(40vw, 420px);
+  bottom: -8%;
+  left: 28%;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.42),
+    rgba(34, 211, 238, 0.18) 50%,
+    transparent 70%
+  );
+  animation: blobThree 22s ease-in-out infinite alternate;
+}
+
+.aurora-blob--4 {
+  width: min(38vw, 400px);
+  height: min(38vw, 400px);
+  top: 30%;
+  left: 35%;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.35),
+    rgba(244, 114, 182, 0.15) 50%,
+    transparent 70%
+  );
+  animation: blobOne 26s ease-in-out infinite alternate-reverse;
+}
+
+/* ─── Mouse spotlight ────────────────────────────────────────── */
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.12),
+    rgba(129, 140, 248, 0.05) 45%,
+    transparent 68%
+  );
+  pointer-events: none;
+  transition: background 0.08s ease;
+  z-index: 2;
+}
+
+/* ─── Floating particles ─────────────────────────────────────── */
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.9),
+    rgba(129, 140, 248, 0.5) 55%,
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.55), 0 0 18px rgba(129, 140, 248, 0.28);
+  animation: particleFloat linear infinite;
+  will-change: transform;
+}
+
+/* ─── Pulsing rings ──────────────────────────────────────────── */
+
+.hero-rings {
+  position: absolute;
+  left: 27%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  width: calc(280px + var(--ri) * 140px);
+  height: calc(280px + var(--ri) * 140px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ringPulse calc(4s + var(--ri) * 1.8s) ease-in-out calc(var(--ri) * -1.5s) infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.06; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 0.28; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* ─── Shooting stars ─────────────────────────────────────────── */
+
+.hero-shooting-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shooting-star {
+  position: absolute;
+  height: 1px;
+  width: 160px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.65), transparent);
+  top: calc(6% + var(--si) * 15%);
+  left: -180px;
+  opacity: 0;
+  border-radius: 1px;
+  animation: shootAcross calc(5s + var(--si) * 2.8s) linear calc(var(--si) * -4.5s) infinite;
+}
+
+@keyframes shootAcross {
+  0%   { left: -180px; opacity: 0; }
+  4%   { opacity: 0.9; }
+  90%  { opacity: 0.7; }
+  100% { left: calc(100% + 180px); opacity: 0; }
+}
+
+/* ─── Typewriter cursor ──────────────────────────────────────── */
+
+.cursor-blink {
+  display: inline-block;
+  color: #6366f1;
+  font-weight: 300;
+  margin-left: 1px;
+  animation: blink 0.85s step-end infinite;
+}
+
+/* ─── Hero content ───────────────────────────────────────────── */
 
 .hero-image {
   width: min(45%, 520px);
@@ -244,6 +401,12 @@
   animation:
     revealUp 0.7s ease-out calc(var(--page-delay) + 0.15s) forwards,
     gentleFloat 6s ease-in-out calc(var(--page-delay) + 1.2s) infinite;
+  filter: drop-shadow(0 12px 40px rgba(99, 102, 241, 0.3));
+  transition: filter 0.4s ease;
+}
+
+.hero-image:hover {
+  filter: drop-shadow(0 18px 55px rgba(99, 102, 241, 0.55));
 }
 
 .hero-image::after {
@@ -265,15 +428,18 @@
 .portfolio-hero h1 {
   font-size: 3.2rem;
   margin-bottom: 1rem;
+  color: #0f172a;
 }
 
 .portfolio-hero p {
   font-size: 1.2rem;
-  color: #666;
+  color: #475569;
   max-width: 500px;
+  min-height: 1.8em;
 }
 
-/* Projects Section */
+/* ─── Projects Section ───────────────────────────────────────── */
+
 .projects-section {
   max-width: 1200px;
   margin: 4rem auto;
@@ -285,7 +451,7 @@
   border: none;
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #0f172a;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -300,7 +466,7 @@
 }
 
 .section-button:hover {
-  color: #61dafb;
+  color: #6366f1;
 }
 
 .section-button .arrow {
@@ -312,7 +478,8 @@
   transform: translateX(5px);
 }
 
-/* Projects Grid */
+/* ─── Projects Grid ──────────────────────────────────────────── */
+
 .projects-grid {
   display: flex;
   overflow-x: auto;
@@ -328,7 +495,7 @@
 }
 
 .projects-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(99, 102, 241, 0.07);
   border-radius: 10px;
 }
 
@@ -341,7 +508,6 @@
   background: #00bcd4;
 }
 
-/* Project Card Link */
 .project-card-link {
   text-decoration: none;
   color: inherit;
@@ -350,16 +516,16 @@
   min-width: 280px;
 }
 
-/* Project Card */
 .project-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   cursor: pointer;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(99, 102, 241, 0.12);
   animation: slideUp 0.6s ease-out both;
   animation-delay: var(--page-delay);
   display: flex;
@@ -367,41 +533,24 @@
   height: 100%;
 }
 
-/* Stagger animation for each project card */
-.project-card-link:nth-child(1) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.1s);
-}
-
-.project-card-link:nth-child(2) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.2s);
-}
-
-.project-card-link:nth-child(3) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.3s);
-}
-
-.project-card-link:nth-child(4) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.4s);
-}
-
-.project-card-link:nth-child(5) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.5s);
-}
-
-.project-card-link:nth-child(6) .project-card {
-  animation-delay: calc(var(--page-delay) + 0.6s);
-}
+.project-card-link:nth-child(1) .project-card { animation-delay: calc(var(--page-delay) + 0.1s); }
+.project-card-link:nth-child(2) .project-card { animation-delay: calc(var(--page-delay) + 0.2s); }
+.project-card-link:nth-child(3) .project-card { animation-delay: calc(var(--page-delay) + 0.3s); }
+.project-card-link:nth-child(4) .project-card { animation-delay: calc(var(--page-delay) + 0.4s); }
+.project-card-link:nth-child(5) .project-card { animation-delay: calc(var(--page-delay) + 0.5s); }
+.project-card-link:nth-child(6) .project-card { animation-delay: calc(var(--page-delay) + 0.6s); }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(97, 218, 251, 0.2);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.32);
 }
 
 .project-image {
   width: 100%;
   height: 160px;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #f5f7ff;
 }
 
 .project-image img {
@@ -425,19 +574,19 @@
 .project-content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #0f172a;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .project-content h3:hover {
-  color: #00c8ff;
+  color: #6366f1;
 }
 
 .project-description {
   font-size: 0.85rem;
-  color: #666;
+  color: #64748b;
   margin-bottom: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -491,17 +640,8 @@
   animation: bounce 2s infinite;
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(8px);
-  }
-}
+/* ─── Responsive ─────────────────────────────────────────────── */
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .portfolio-hero {
     flex-direction: column;
@@ -512,6 +652,7 @@
     border-radius: 0;
     min-height: 100vh;
     min-height: 100svh;
+    cursor: default;
   }
 
   .hero-image {
@@ -534,14 +675,6 @@
     font-size: 1rem;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .portfolio-hero,
-    .hero-image,
-    .hero-text {
-      animation: none;
-      opacity: 1;
-    }
-  }
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -550,12 +683,26 @@
   .projects-section h2 {
     font-size: 1.5rem;
   }
+
+  /* Reduce blob sizes on mobile */
+  .aurora-blob--1 { width: 80vw; height: 80vw; }
+  .aurora-blob--2 { width: 70vw; height: 70vw; }
+  .aurora-blob--3 { width: 55vw; height: 55vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio-container::before,
-  .portfolio-container::after {
+  .portfolio-container::after,
+  .aurora-blob,
+  .hero-particle {
     animation: none;
+  }
+
+  .portfolio-hero,
+  .hero-image,
+  .hero-text {
+    animation: none;
+    opacity: 1;
   }
 
   .reveal-on-scroll {

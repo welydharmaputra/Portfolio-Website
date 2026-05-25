@@ -91,10 +91,18 @@ export default function Navbar() {
         </div>
 
         <div className={`navbar-menu ${isOpen ? "active" : ""}`}>
-          <Link to="/" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/"
+            className={location.pathname === "/" ? "is-active" : ""}
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
-          <Link to="/biography" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/biography"
+            className={location.pathname === "/biography" ? "is-active" : ""}
+            onClick={() => setIsOpen(false)}
+          >
             About
           </Link>
           {isHomePage && (
@@ -113,10 +121,18 @@ export default function Navbar() {
               </a>
             </>
           )}
-          <Link to="/contact" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/contact"
+            className={location.pathname === "/contact" ? "is-active" : ""}
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/projects"
+            className={`navbar-cta${location.pathname === "/projects" ? " is-active" : ""}`}
+            onClick={() => setIsOpen(false)}
+          >
             All Projects
           </Link>
         </div>
