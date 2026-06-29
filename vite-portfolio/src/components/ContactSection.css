@@ -1,5 +1,5 @@
 .contact-section {
-  background-color: #f5f5f5;
+  background-color: #0d0d14;
   padding: 4rem 2rem;
   --page-delay: 0.7s;
   position: relative;
@@ -66,7 +66,7 @@
   font-size: 3rem;
   font-family: "Georgia", "Times New Roman", serif;
   margin-bottom: 2rem;
-  color: #1f1f1f;
+  color: #ffffff;
   animation: contactRiseIn 0.7s ease-out 0.12s both;
 }
 
@@ -101,7 +101,7 @@
   display: flex;
   align-items: flex-start;
   font-size: 0.95rem;
-  color: #333;
+  color: #c4b5fd;
 }
 
 .contact-input,
@@ -109,9 +109,9 @@
   width: 100%;
   padding: 0.9rem 1rem;
   border: none;
-  background-color: #efefef;
+  background-color: #1a1025;
   font-size: 0.95rem;
-  color: #333;
+  color: #e2e8f0;
   transform: translateZ(0);
   transition:
     box-shadow 0.25s ease,
@@ -121,7 +121,7 @@
 
 .contact-input::placeholder,
 .contact-textarea::placeholder {
-  color: #9a9a9a;
+  color: #4b5563;
 }
 
 .contact-textarea {
@@ -132,8 +132,8 @@
 .contact-input:focus,
 .contact-textarea:focus {
   outline: none;
-  background-color: #fff;
-  box-shadow: 0 8px 24px rgba(31, 31, 31, 0.12);
+  background-color: #2d1042;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.15);
   transform: translateY(-2px);
 }
 
@@ -142,9 +142,9 @@
   margin-top: 0.5rem;
   padding: 0.6rem 2.2rem;
   border-radius: 999px;
-  border: 1px solid #1f1f1f;
+  border: 1px solid #a855f7;
   background: transparent;
-  color: #1f1f1f;
+  color: #c084fc;
   font-size: 0.95rem;
   cursor: pointer;
   opacity: 0;
@@ -157,10 +157,10 @@
 }
 
 .contact-submit:hover {
-  background-color: #1f1f1f;
+  background-color: #a855f7;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(31, 31, 31, 0.2);
+  box-shadow: 0 10px 18px rgba(168, 85, 247, 0.3);
 }
 
 .contact-submit:active {

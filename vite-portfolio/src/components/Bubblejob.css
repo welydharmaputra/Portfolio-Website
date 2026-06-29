@@ -11,21 +11,21 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #61dafb, #00bcd4);
+  background: linear-gradient(135deg, #a855f7, #e11d48);
   border: none;
   padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.4);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.45);
   transition: all 0.3s ease;
   z-index: 1001;
 }
 
 .fab-main:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(97, 218, 251, 0.6);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.65);
 }
 
 .fab-main:active {
@@ -90,11 +90,11 @@
   justify-content: center;
   gap: 1rem;
   padding: 0.75rem 1.25rem;
-  background-color: #2a2a2a;
+  background-color: #1a1025;
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
-  border: 1px solid #61dafb;
+  border: 1px solid #a855f7;
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0;
@@ -139,10 +139,10 @@
 }
 
 .fab-item:hover {
-  background-color: #61dafb;
-  color: #1f1f1f;
+  background-color: #a855f7;
+  color: #fff;
   transform: scale(1.05) translateX(-5px);
-  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
 }
 
 .fab-label {

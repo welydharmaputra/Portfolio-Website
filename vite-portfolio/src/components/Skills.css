@@ -11,7 +11,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 4rem;
-  color: #0f172a;
+  color: #ffffff;
   letter-spacing: 0.5px;
 }
 
@@ -34,13 +34,13 @@
 .skills-service-title {
   font-size: 2.2rem;
   font-weight: 500;
-  color: #0f172a;
+  color: #e2e8f0;
   margin: 0;
 }
 
 .skills-service-text {
   font-size: 0.95rem;
-  color: #64748b;
+  color: #94a3b8;
   line-height: 1.7;
   margin: 0.35rem 0 0;
 }
@@ -75,13 +75,13 @@
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1rem;
-  background: linear-gradient(135deg, #61dafb, #00bcd4);
+  background: linear-gradient(135deg, #a855f7, #e11d48);
   color: #fff;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -97,8 +97,8 @@
 
 .skill-bubble:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(97, 218, 251, 0.5);
-  border-color: rgba(97, 218, 251, 0.5);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.55);
+  border-color: rgba(168, 85, 247, 0.5);
 }
 
 @keyframes bubbleTilt {

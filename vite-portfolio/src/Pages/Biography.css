@@ -1,8 +1,8 @@
 .biography-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #0d0d14;
+  color: #e2e8f0;
   padding: 4rem 0;
   --page-delay: 0.7s;
   position: relative;
@@ -113,7 +113,7 @@
 .biography-title {
   font-size: 2.6rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -128,9 +128,9 @@
   margin: 0;
   border-radius: 22px;
   overflow: hidden;
-  background: linear-gradient(145deg, #ececec, #ffffff);
-  border: 1px solid #e1e1e1;
-  box-shadow: 0 16px 30px rgba(20, 20, 20, 0.08);
+  background: linear-gradient(145deg, #1a1025, #2d1042);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 16px 30px rgba(168, 85, 247, 0.15);
 }
 
 .biography-photo {
@@ -147,19 +147,19 @@
 .biography-name {
   margin: 0;
   font-size: 1.8rem;
-  color: #1f1f1f;
+  color: #ffffff;
 }
 
 .biography-role {
   margin: 0.4rem 0 1.2rem;
-  color: #7f4d2b;
+  color: #c084fc;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .biography-text {
   font-size: 1.05rem;
-  color: #666;
+  color: #94a3b8;
   line-height: 1.7;
   margin: 0 0 1rem;
 }
@@ -178,15 +178,15 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   border-radius: 0;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .biography-hobbies::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(13, 13, 20, 0.78);
   z-index: 1;
 }
 
@@ -260,8 +260,9 @@
   flex: 1 1 620px;
   padding: 1.5rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.74);
+  background: rgba(26, 16, 37, 0.88);
   backdrop-filter: blur(4px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .biography-hobbies-foreground {
@@ -298,19 +299,19 @@
 .biography-hobbies-title {
   margin: 0 0 0.65rem;
   font-size: 1.2rem;
-  color: #2b2b2b;
+  color: #e2e8f0;
 }
 
 .biography-link {
-  color: #7f4d2b;
+  color: #c084fc;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid rgba(127, 77, 43, 0.45);
+  border-bottom: 1px solid rgba(192, 132, 252, 0.45);
 }
 
 .biography-link:hover {
-  color: #5e381f;
-  border-bottom-color: rgba(94, 56, 31, 0.8);
+  color: #a855f7;
+  border-bottom-color: rgba(168, 85, 247, 0.8);
 }
 
 .biography-meta {
@@ -322,12 +323,12 @@
 
 .biography-meta span {
   display: inline-block;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 999px;
   padding: 0.4rem 0.9rem;
   font-size: 0.88rem;
-  color: #4e4e4e;
-  background-color: #fcfcfc;
+  color: #94a3b8;
+  background-color: rgba(168, 85, 247, 0.08);
 }
 
 @media (max-width: 768px) {

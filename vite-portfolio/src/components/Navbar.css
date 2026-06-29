@@ -32,11 +32,11 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    #6366f1,
     #a855f7,
-    #06b6d4,
-    #ec4899,
-    #6366f1
+    #e11d48,
+    #c084fc,
+    #e11d48,
+    #a855f7
   );
   background-size: 300% 100%;
   animation: gradientBorder 5s linear infinite;
