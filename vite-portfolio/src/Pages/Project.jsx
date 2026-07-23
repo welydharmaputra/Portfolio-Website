@@ -306,6 +306,16 @@ function Project() {
           </span>
         ))}
       </div>
+      {project.websiteUrl && (
+        <a
+          href={project.websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-website-link"
+        >
+          Visit Website →
+        </a>
+      )}
     </div>
   );
 }

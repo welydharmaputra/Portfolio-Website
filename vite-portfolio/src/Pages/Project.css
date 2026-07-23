@@ -203,13 +203,22 @@
   background-color: rgba(31, 31, 31, 0.82);
   color: #fff;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
   transition:
     background-color 0.25s ease,
     transform 0.25s ease;
+}
+
+.slider-nav span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .slider-nav:hover {
@@ -396,6 +405,26 @@
 
 .back-button:hover {
   background-color: #a855f7;
+  color: #fff;
+}
+
+.project-website-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid #a855f7;
+  background: linear-gradient(135deg, #a855f7, #e11d48);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-website-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
   color: #fff;
 }
 

@@ -96,8 +96,79 @@ import menagerieImage4 from "../assets/Menagrie/Snake4.jpg";
 import menagerieImage5 from "../assets/Menagrie/Snake5.jpg";
 import menagerieImage6 from "../assets/Menagrie/Snake6.jpg";
 import menagerieImage7 from "../assets/Menagrie/Snake7.jpg";
+import lunoraImage1 from "../assets/Lunora/Lunora1.jpg";
+import lunoraImage2 from "../assets/Lunora/Lunora2.png";
+import lunoraImage3 from "../assets/Lunora/Lunora3.png";
+import lunoraImage4 from "../assets/Lunora/Lunora4.png";
+import lunoraImage5 from "../assets/Lunora/Lunora5.png";
+import lunoraImage6 from "../assets/Lunora/Lunora6.png";
+import lunoraImage7 from "../assets/Lunora/Lunora7.png";
+import lunoraImage8 from "../assets/Lunora/Lunora8.png";
+import lunoraImage9 from "../assets/Lunora/Lunora9.png";
+import lunoraImage10 from "../assets/Lunora/Lunora10.png";
+import lunoraImage11 from "../assets/Lunora/Lunora11.png";
+import lunoraImage12 from "../assets/Lunora/Lunora12.png";
+import gunAdsMain from "../assets/GunAdsResearch/GunsAd.jpg";
+import gunAdsProfAimee from "../assets/GunAdsResearch/ProfAimeeDinninHuff.jpg";
+import gunAdsScreen1 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132042.png";
+import gunAdsScreen2 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132053.png";
+import gunAdsScreen3 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132142.png";
+import gunAdsScreen4 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132256.png";
+import gunAdsScreen5 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132317.png";
+import gunAdsScreen6 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132345.png";
+import gunAdsScreen7 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132410.png";
+import gunAdsScreen8 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132429.png";
+import gunAdsScreen9 from "../assets/GunAdsResearch/Screenshot 2026-03-04 132450.png";
 
 export const projectsData = [
+  {
+    id: 17,
+    title: "Lunora",
+    description:
+      "An e-commerce website for customizable bracelets built with React, Shopify, and CSS, deployed on Vercel. Lunora features a fully responsive experience with dedicated desktop and mobile views, letting customers design and personalize their own bracelet from scratch.",
+    image: lunoraImage1,
+    gallery: [
+      lunoraImage1,
+      lunoraImage2,
+      lunoraImage3,
+      lunoraImage4,
+      lunoraImage5,
+      lunoraImage6,
+      lunoraImage7,
+      lunoraImage8,
+      lunoraImage9,
+      lunoraImage10,
+      lunoraImage11,
+      lunoraImage12,
+    ],
+    tags: ["React", "Shopify", "HTML/CSS", "Vercel", "E-Commerce", "Responsive Design"],
+    category: "Web Development",
+    websiteUrl: "https://lunoraessence.com",
+    link: "/project/17",
+  },
+  {
+    id: 16,
+    title: "Gun Ads Research",
+    description:
+      "A research project on gun advertisement analysis conducted in collaboration with Prof. Aimee Dinnin Huff and Prof. Michelle Barnhart, exploring how firearms are marketed and the broader cultural implications.",
+    image: gunAdsMain,
+    gallery: [
+      gunAdsMain,
+      gunAdsScreen1,
+      gunAdsScreen2,
+      gunAdsScreen3,
+      gunAdsScreen4,
+      gunAdsScreen5,
+      gunAdsScreen6,
+      gunAdsScreen7,
+      gunAdsScreen8,
+      gunAdsScreen9,
+      gunAdsProfAimee,
+    ],
+    tags: ["Research", "Data Analysis", "Marketing", "Policy"],
+    category: "Research",
+    link: "/project/16",
+  },
   {
     id: 1,
     title: "BINUS Website (First Phase Internship)",
@@ -124,6 +195,68 @@ export const projectsData = [
     ],
     category: "Internship Project",
     link: "/project/5",
+  },
+  {
+    id: 9,
+    title: "UIUX National Weather Service School Project",
+    description:
+      "A school UI/UX project for a National Weather Service concept, focused on information clarity, accessibility, and user-friendly weather workflows.",
+    image: uiuxWeatherImage,
+    gallery: [
+      uiuxWeatherImage,
+      uiuxWeatherImage1,
+      uiuxWeatherImage2,
+      uiuxWeatherImage3,
+      uiuxWeatherImage4,
+      uiuxWeatherImage5,
+      uiuxWeatherImage6,
+    ],
+    tags: ["UI/UX", "Weather App", "Figma", "Wireframing", "Prototyping"],
+    category: "UI/UX Design",
+    link: "/project/9",
+  },
+  {
+    id: 8,
+    title: "Wireframing BookAService",
+    description:
+      "A BookAService wireframing project focused on mapping user journeys, clarifying page hierarchy, and validating early product structure.",
+    image: wireframing1,
+    gallery: [
+      wireframing2,
+      wireframing3,
+      wireframing4,
+      wireframing5,
+      wireframing6,
+      wireframing7,
+      wireframing8,
+      wireframing9,
+      wireframing10,
+      wireframing1,
+    ],
+    tags: ["Wireframing", "UI/UX", "Prototype"],
+    category: "UI/UX Design",
+    link: "/project/8",
+  },
+  {
+    id: 5,
+    title: "Cornel Box Animation",
+    description:
+      "A Blender lighting and animation exercise based on a Cornell Box scene, focused on material behavior, shadow quality, and cinematic framing.",
+    image: cornelBoxImage1,
+    gallery: [
+      cornelBoxImage1,
+      cornelBoxImage2,
+      cornelBoxImage3,
+      cornelBoxImage4,
+      cornelBoxImage5,
+      cornelBoxImage6,
+      cornelBoxImage7,
+      cornelBoxImage8,
+    ],
+    videoUrl: "https://youtu.be/pqJpAHZMF_Q?si=1x5a778qmx4E9S-Q",
+    tags: ["Blender3D", "Animation", "Lighting"],
+    category: "3D Animation",
+    link: "/project/4",
   },
   {
     id: 2,
@@ -183,27 +316,6 @@ export const projectsData = [
     link: "/project/3",
   },
   {
-    id: 5,
-    title: "Cornel Box Animation",
-    description:
-      "A Blender lighting and animation exercise based on a Cornell Box scene, focused on material behavior, shadow quality, and cinematic framing.",
-    image: cornelBoxImage1,
-    gallery: [
-      cornelBoxImage1,
-      cornelBoxImage2,
-      cornelBoxImage3,
-      cornelBoxImage4,
-      cornelBoxImage5,
-      cornelBoxImage6,
-      cornelBoxImage7,
-      cornelBoxImage8,
-    ],
-    videoUrl: "https://youtu.be/pqJpAHZMF_Q?si=1x5a778qmx4E9S-Q",
-    tags: ["Blender3D", "Animation", "Lighting"],
-    category: "3D Animation",
-    link: "/project/4",
-  },
-  {
     id: 6,
     title: "Apple OpenGL",
     description:
@@ -228,54 +340,13 @@ export const projectsData = [
     link: "/project/7",
   },
   {
-    id: 8,
-    title: "Wireframing BookAService",
-    description:
-      "A BookAService wireframing project focused on mapping user journeys, clarifying page hierarchy, and validating early product structure.",
-    image: wireframing1,
-    gallery: [
-      wireframing2,
-      wireframing3,
-      wireframing4,
-      wireframing5,
-      wireframing6,
-      wireframing7,
-      wireframing8,
-      wireframing9,
-      wireframing10,
-      wireframing1,
-    ],
-    tags: ["Wireframing", "UI/UX", "Prototype"],
-    category: "UI/UX Design",
-    link: "/project/8",
-  },
-  {
-    id: 9,
-    title: "UIUX National Weather Service School Project",
-    description:
-      "A school UI/UX project for a National Weather Service concept, focused on information clarity, accessibility, and user-friendly weather workflows.",
-    image: uiuxWeatherImage,
-    gallery: [
-      uiuxWeatherImage,
-      uiuxWeatherImage1,
-      uiuxWeatherImage2,
-      uiuxWeatherImage3,
-      uiuxWeatherImage4,
-      uiuxWeatherImage5,
-      uiuxWeatherImage6,
-    ],
-    tags: ["UI/UX", "Weather App", "Figma", "Wireframing", "Prototyping"],
-    category: "UI/UX Design",
-    link: "/project/9",
-  },
-  {
     id: 10,
     title: "Cube Mapping",
     description:
       "A graphics study focused on environment reflections and skybox-driven rendering using cube map textures.",
     image: cubeMappingImage1,
     gallery: [cubeMappingImage1, cubeMappingImage2, cubeMappingImage3],
-    tags: ["OpenGL", "Graphics", "Cube Map"],
+    tags: ["OpenGL", "Graphics", "C++", "Cube Map"],
     category: "Graphics Programming",
     link: "/project/10",
   },
@@ -294,7 +365,7 @@ export const projectsData = [
       displacementImage6,
       displacementImage7,
     ],
-    tags: ["OpenGL", "Graphics", "Displacement"],
+    tags: ["OpenGL", "Graphics", "C++", "Displacement"],
     category: "Graphics Programming",
     link: "/project/11",
   },
@@ -311,7 +382,7 @@ export const projectsData = [
       geometryShadersImage4,
       geometryShadersImage5,
     ],
-    tags: ["OpenGL", "Shaders", "Graphics"],
+    tags: ["OpenGL", "Shaders", "Graphics", "C++"],
     category: "Graphics Programming",
     link: "/project/12",
   },
@@ -322,7 +393,7 @@ export const projectsData = [
       "A lighting and shading practice project using aquatic subject matter to compare highlights, shadow falloff, and tone.",
     image: lightingImage1,
     gallery: [lightingImage1, lightingImage2, lightingImage3, lightingImage4],
-    tags: ["Lighting", "3D", "Render"],
+    tags: ["OpenGL", "Lighting", "3D", "Render", "C++"],
     category: "3D Rendering",
     link: "/project/13",
   },
@@ -339,7 +410,7 @@ export const projectsData = [
       magicLensImage4,
       magicLensImage5,
     ],
-    tags: ["OpenGL", "Post Processing", "Lens Effects"],
+    tags: ["OpenGL", "Post Processing", "Lens Effects", "C++"],
     category: "Graphics Programming",
     link: "/project/14",
   },
@@ -358,7 +429,7 @@ export const projectsData = [
       menagerieImage6,
       menagerieImage7,
     ],
-    tags: ["3D", "Rendering", "Character"],
+    tags: ["OpenGL", "3D", "Rendering", "Character", "C++"],
     category: "3D Rendering",
     link: "/project/15",
   },
